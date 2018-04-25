@@ -1,0 +1,571 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A566A5D52090C180001406CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D42090C180001406CC /* AppDelegate.swift */; };
+		A566A5D72090C180001406CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D62090C180001406CC /* ViewController.swift */; };
+		A566A5DA2090C180001406CC /* BLESerialPort.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D82090C180001406CC /* BLESerialPort.xcdatamodeld */; };
+		A566A5DC2090C180001406CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A566A5DB2090C180001406CC /* Assets.xcassets */; };
+		A566A5DF2090C180001406CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A566A5DD2090C180001406CC /* Main.storyboard */; };
+		A566A5EB2090C180001406CC /* BLESerialPortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5EA2090C180001406CC /* BLESerialPortTests.swift */; };
+		A566A5F62090C180001406CC /* BLESerialPortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5F52090C180001406CC /* BLESerialPortUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A566A5E72090C180001406CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A566A5C92090C180001406CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A566A5D02090C180001406CC;
+			remoteInfo = BLESerialPort;
+		};
+		A566A5F22090C180001406CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A566A5C92090C180001406CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A566A5D02090C180001406CC;
+			remoteInfo = BLESerialPort;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A566A5D12090C180001406CC /* BLESerialPort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLESerialPort.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A566A5D42090C180001406CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A566A5D62090C180001406CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A566A5D92090C180001406CC /* BLESerialPort.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BLESerialPort.xcdatamodel; sourceTree = "<group>"; };
+		A566A5DB2090C180001406CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A566A5DE2090C180001406CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A566A5E02090C180001406CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A566A5E12090C180001406CC /* BLESerialPort.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BLESerialPort.entitlements; sourceTree = "<group>"; };
+		A566A5E62090C180001406CC /* BLESerialPortTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESerialPortTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A566A5EA2090C180001406CC /* BLESerialPortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialPortTests.swift; sourceTree = "<group>"; };
+		A566A5EC2090C180001406CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A566A5F12090C180001406CC /* BLESerialPortUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESerialPortUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A566A5F52090C180001406CC /* BLESerialPortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialPortUITests.swift; sourceTree = "<group>"; };
+		A566A5F72090C180001406CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A566A5CE2090C180001406CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A566A5E32090C180001406CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A566A5EE2090C180001406CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A566A5C82090C180001406CC = {
+			isa = PBXGroup;
+			children = (
+				A566A5D32090C180001406CC /* BLESerialPort */,
+				A566A5E92090C180001406CC /* BLESerialPortTests */,
+				A566A5F42090C180001406CC /* BLESerialPortUITests */,
+				A566A5D22090C180001406CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A566A5D22090C180001406CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A566A5D12090C180001406CC /* BLESerialPort.app */,
+				A566A5E62090C180001406CC /* BLESerialPortTests.xctest */,
+				A566A5F12090C180001406CC /* BLESerialPortUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A566A5D32090C180001406CC /* BLESerialPort */ = {
+			isa = PBXGroup;
+			children = (
+				A566A5D42090C180001406CC /* AppDelegate.swift */,
+				A566A5D62090C180001406CC /* ViewController.swift */,
+				A566A5DB2090C180001406CC /* Assets.xcassets */,
+				A566A5DD2090C180001406CC /* Main.storyboard */,
+				A566A5E02090C180001406CC /* Info.plist */,
+				A566A5E12090C180001406CC /* BLESerialPort.entitlements */,
+				A566A5D82090C180001406CC /* BLESerialPort.xcdatamodeld */,
+			);
+			path = BLESerialPort;
+			sourceTree = "<group>";
+		};
+		A566A5E92090C180001406CC /* BLESerialPortTests */ = {
+			isa = PBXGroup;
+			children = (
+				A566A5EA2090C180001406CC /* BLESerialPortTests.swift */,
+				A566A5EC2090C180001406CC /* Info.plist */,
+			);
+			path = BLESerialPortTests;
+			sourceTree = "<group>";
+		};
+		A566A5F42090C180001406CC /* BLESerialPortUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A566A5F52090C180001406CC /* BLESerialPortUITests.swift */,
+				A566A5F72090C180001406CC /* Info.plist */,
+			);
+			path = BLESerialPortUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A566A5D02090C180001406CC /* BLESerialPort */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A566A5FA2090C180001406CC /* Build configuration list for PBXNativeTarget "BLESerialPort" */;
+			buildPhases = (
+				A566A5CD2090C180001406CC /* Sources */,
+				A566A5CE2090C180001406CC /* Frameworks */,
+				A566A5CF2090C180001406CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BLESerialPort;
+			productName = BLESerialPort;
+			productReference = A566A5D12090C180001406CC /* BLESerialPort.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A566A5E52090C180001406CC /* BLESerialPortTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A566A5FD2090C180001406CC /* Build configuration list for PBXNativeTarget "BLESerialPortTests" */;
+			buildPhases = (
+				A566A5E22090C180001406CC /* Sources */,
+				A566A5E32090C180001406CC /* Frameworks */,
+				A566A5E42090C180001406CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A566A5E82090C180001406CC /* PBXTargetDependency */,
+			);
+			name = BLESerialPortTests;
+			productName = BLESerialPortTests;
+			productReference = A566A5E62090C180001406CC /* BLESerialPortTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A566A5F02090C180001406CC /* BLESerialPortUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A566A6002090C180001406CC /* Build configuration list for PBXNativeTarget "BLESerialPortUITests" */;
+			buildPhases = (
+				A566A5ED2090C180001406CC /* Sources */,
+				A566A5EE2090C180001406CC /* Frameworks */,
+				A566A5EF2090C180001406CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A566A5F32090C180001406CC /* PBXTargetDependency */,
+			);
+			name = BLESerialPortUITests;
+			productName = BLESerialPortUITests;
+			productReference = A566A5F12090C180001406CC /* BLESerialPortUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A566A5C92090C180001406CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = keinYe;
+				TargetAttributes = {
+					A566A5D02090C180001406CC = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					A566A5E52090C180001406CC = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A566A5D02090C180001406CC;
+					};
+					A566A5F02090C180001406CC = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A566A5D02090C180001406CC;
+					};
+				};
+			};
+			buildConfigurationList = A566A5CC2090C180001406CC /* Build configuration list for PBXProject "BLESerialPort" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A566A5C82090C180001406CC;
+			productRefGroup = A566A5D22090C180001406CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A566A5D02090C180001406CC /* BLESerialPort */,
+				A566A5E52090C180001406CC /* BLESerialPortTests */,
+				A566A5F02090C180001406CC /* BLESerialPortUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A566A5CF2090C180001406CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A566A5DC2090C180001406CC /* Assets.xcassets in Resources */,
+				A566A5DF2090C180001406CC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A566A5E42090C180001406CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A566A5EF2090C180001406CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A566A5CD2090C180001406CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A566A5D72090C180001406CC /* ViewController.swift in Sources */,
+				A566A5D52090C180001406CC /* AppDelegate.swift in Sources */,
+				A566A5DA2090C180001406CC /* BLESerialPort.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A566A5E22090C180001406CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A566A5EB2090C180001406CC /* BLESerialPortTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A566A5ED2090C180001406CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A566A5F62090C180001406CC /* BLESerialPortUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A566A5E82090C180001406CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A566A5D02090C180001406CC /* BLESerialPort */;
+			targetProxy = A566A5E72090C180001406CC /* PBXContainerItemProxy */;
+		};
+		A566A5F32090C180001406CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A566A5D02090C180001406CC /* BLESerialPort */;
+			targetProxy = A566A5F22090C180001406CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A566A5DD2090C180001406CC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A566A5DE2090C180001406CC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A566A5F82090C180001406CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A566A5F92090C180001406CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		A566A5FB2090C180001406CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BLESerialPort/BLESerialPort.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V4QZB8WBGM;
+				INFOPLIST_FILE = BLESerialPort/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPort;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		A566A5FC2090C180001406CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BLESerialPort/BLESerialPort.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V4QZB8WBGM;
+				INFOPLIST_FILE = BLESerialPort/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPort;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		A566A5FE2090C180001406CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V4QZB8WBGM;
+				INFOPLIST_FILE = BLESerialPortTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPortTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLESerialPort.app/Contents/MacOS/BLESerialPort";
+			};
+			name = Debug;
+		};
+		A566A5FF2090C180001406CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V4QZB8WBGM;
+				INFOPLIST_FILE = BLESerialPortTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPortTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLESerialPort.app/Contents/MacOS/BLESerialPort";
+			};
+			name = Release;
+		};
+		A566A6012090C180001406CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V4QZB8WBGM;
+				INFOPLIST_FILE = BLESerialPortUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPortUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = BLESerialPort;
+			};
+			name = Debug;
+		};
+		A566A6022090C180001406CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V4QZB8WBGM;
+				INFOPLIST_FILE = BLESerialPortUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPortUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = BLESerialPort;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A566A5CC2090C180001406CC /* Build configuration list for PBXProject "BLESerialPort" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A566A5F82090C180001406CC /* Debug */,
+				A566A5F92090C180001406CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A566A5FA2090C180001406CC /* Build configuration list for PBXNativeTarget "BLESerialPort" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A566A5FB2090C180001406CC /* Debug */,
+				A566A5FC2090C180001406CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A566A5FD2090C180001406CC /* Build configuration list for PBXNativeTarget "BLESerialPortTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A566A5FE2090C180001406CC /* Debug */,
+				A566A5FF2090C180001406CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A566A6002090C180001406CC /* Build configuration list for PBXNativeTarget "BLESerialPortUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A566A6012090C180001406CC /* Debug */,
+				A566A6022090C180001406CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A566A5D82090C180001406CC /* BLESerialPort.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A566A5D92090C180001406CC /* BLESerialPort.xcdatamodel */,
+			);
+			currentVersion = A566A5D92090C180001406CC /* BLESerialPort.xcdatamodel */;
+			path = BLESerialPort.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A566A5C92090C180001406CC /* Project object */;
+}
