@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A535C79E209688B3001BF2F5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535C79D209688B3001BF2F5 /* Logger.swift */; };
 		A566A5D52090C180001406CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D42090C180001406CC /* AppDelegate.swift */; };
 		A566A5D72090C180001406CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D62090C180001406CC /* ViewController.swift */; };
 		A566A5DA2090C180001406CC /* BLESerialPort.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D82090C180001406CC /* BLESerialPort.xcdatamodeld */; };
@@ -14,6 +15,7 @@
 		A566A5DF2090C180001406CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A566A5DD2090C180001406CC /* Main.storyboard */; };
 		A566A5EB2090C180001406CC /* BLESerialPortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5EA2090C180001406CC /* BLESerialPortTests.swift */; };
 		A566A5F62090C180001406CC /* BLESerialPortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5F52090C180001406CC /* BLESerialPortUITests.swift */; };
+		A566A60420921115001406CC /* BLEPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A60320921115001406CC /* BLEPeripheral.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A535C79D209688B3001BF2F5 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A566A5D12090C180001406CC /* BLESerialPort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLESerialPort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A566A5D42090C180001406CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A566A5D62090C180001406CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		A566A5F12090C180001406CC /* BLESerialPortUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESerialPortUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A566A5F52090C180001406CC /* BLESerialPortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialPortUITests.swift; sourceTree = "<group>"; };
 		A566A5F72090C180001406CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A566A60320921115001406CC /* BLEPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEPeripheral.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A535C79B20968858001BF2F5 /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				A566A60320921115001406CC /* BLEPeripheral.swift */,
+			);
+			path = BLE;
+			sourceTree = "<group>";
+		};
+		A535C79C2096886D001BF2F5 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				A535C79D209688B3001BF2F5 /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		A566A5C82090C180001406CC = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +118,8 @@
 		A566A5D32090C180001406CC /* BLESerialPort */ = {
 			isa = PBXGroup;
 			children = (
+				A535C79C2096886D001BF2F5 /* Logger */,
+				A535C79B20968858001BF2F5 /* BLE */,
 				A566A5D42090C180001406CC /* AppDelegate.swift */,
 				A566A5D62090C180001406CC /* ViewController.swift */,
 				A566A5DB2090C180001406CC /* Assets.xcassets */,
@@ -196,6 +218,11 @@
 					A566A5D02090C180001406CC = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					A566A5E52090C180001406CC = {
 						CreatedOnToolsVersion = 9.0.1;
@@ -260,7 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A535C79E209688B3001BF2F5 /* Logger.swift in Sources */,
 				A566A5D72090C180001406CC /* ViewController.swift in Sources */,
+				A566A60420921115001406CC /* BLEPeripheral.swift in Sources */,
 				A566A5D52090C180001406CC /* AppDelegate.swift in Sources */,
 				A566A5DA2090C180001406CC /* BLESerialPort.xcdatamodeld in Sources */,
 			);
