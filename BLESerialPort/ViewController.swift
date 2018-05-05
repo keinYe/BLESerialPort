@@ -13,9 +13,19 @@ class ViewController: NSViewController {
     
     var peripheralManager: BLEPeripheral?
     
+    @IBOutlet weak var outputScrollView: NSScrollView!
+    @IBOutlet var outputTextView: NSTextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        outputScrollView.scrollerStyle = .overlay
+        outputScrollView.hasVerticalRuler = true
+        outputScrollView.hasHorizontalRuler = true
+        outputScrollView.scrollerKnobStyle = .dark
+        outputScrollView.horizontalScrollElasticity = .automatic
+        outputScrollView.verticalScrollElasticity = .automatic
+        
         
         // Do any additional setup after loading the view.
     }
