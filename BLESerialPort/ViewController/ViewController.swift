@@ -16,6 +16,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var outputScrollView: NSScrollView!
     @IBOutlet var outputTextView: NSTextView!
     
+    var prefs = Preferencs()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +35,7 @@ class ViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         peripheralManager = BLEPeripheral()
-        
+        setupPrefs()
         _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(ViewController.sendData) , userInfo: nil, repeats: true)
     }
 
@@ -48,6 +50,24 @@ extension ViewController {
     @objc func sendData(t:Timer)->Bool{
         peripheralManager?.sendData(data: [1, 2, 3])
         return true
+    }
+}
+
+extension ViewController {
+    func setupPrefs() {
+        updateFormPrefs()
+        let notificationName = Notification.Name(rawValue: "PrefsChanged")
+        NotificationCenter.default.addObserver(forName: notificationName,
+                                               object: nil, queue: nil) {
+                                                (notification) in
+                                                self.updateFormPrefs()
+        }
+
+    }
+    
+    func updateFormPrefs() {
+        peripheralManager?.ServiceUUID = prefs.serviceUUID
+        peripheralManager?.notiyCharacteristicUUID = prefs.characUUID
     }
 }
 

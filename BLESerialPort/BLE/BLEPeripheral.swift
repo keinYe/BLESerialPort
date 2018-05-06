@@ -14,10 +14,9 @@ typealias ReciveData = (String, [UInt8]) -> Void
 class BLEPeripheral: NSObject {
     internal var peripheralManager: CBPeripheralManager
     let localNameKey =  "BabyBluetoothStubOnOSX";
-    let ServiceUUID =  "FFF0";
-    let notiyCharacteristicUUID =  "FFF1";
-    let readCharacteristicUUID =  "FFF2";
-    let readwriteCharacteristicUUID =  "FFE3";
+    var ServiceUUID =  "FFF0";
+    var notiyCharacteristicUUID =  "FFF1";
+
     
     
     fileprivate var reciveData : ReciveData?
@@ -32,22 +31,20 @@ class BLEPeripheral: NSObject {
     //publish service and characteristic
     public func publishService(){
         
-        let notiyCharacteristic = CBMutableCharacteristic(type: CBUUID(string: notiyCharacteristicUUID), properties:  [CBCharacteristicProperties.notify], value: nil, permissions: CBAttributePermissions.readable)
-        let readCharacteristic = CBMutableCharacteristic(type: CBUUID(string: readCharacteristicUUID), properties:  [CBCharacteristicProperties.read], value: nil, permissions: CBAttributePermissions.readable)
-        let writeCharacteristic = CBMutableCharacteristic(type: CBUUID(string: readwriteCharacteristicUUID), properties:  [CBCharacteristicProperties.write,CBCharacteristicProperties.read], value: nil, permissions: [CBAttributePermissions.readable,CBAttributePermissions.writeable])
+        peripheralManager.removeAllServices()
+        
+        let notiyCharacteristic = CBMutableCharacteristic(type: CBUUID(string: notiyCharacteristicUUID), properties:  [.notify, .read, .write], value: nil, permissions: [.readable, .writeable])
+
         
         //设置description
         let descriptionStringType = CBUUID(string: CBUUIDCharacteristicUserDescriptionString)
-        let description1 = CBMutableDescriptor(type: descriptionStringType, value: "canNotifyCharacteristic")
-        let description2 = CBMutableDescriptor(type: descriptionStringType, value: "canReadCharacteristic")
-        let description3 = CBMutableDescriptor(type: descriptionStringType, value: "canWriteAndWirteCharacteristic")
+        let description1 = CBMutableDescriptor(type: descriptionStringType, value: "Characteristic")
         notiyCharacteristic.descriptors = [description1];
-        readCharacteristic.descriptors = [description2];
-        writeCharacteristic.descriptors = [description3];
+
         
         //设置service
         let service:CBMutableService =  CBMutableService(type: CBUUID(string: ServiceUUID), primary: true)
-        service.characteristics = [notiyCharacteristic,readCharacteristic,writeCharacteristic]
+        service.characteristics = [notiyCharacteristic]
         peripheralManager.add(service);
     }
 

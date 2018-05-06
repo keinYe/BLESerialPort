@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A535C79E209688B3001BF2F5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535C79D209688B3001BF2F5 /* Logger.swift */; };
+		A55EC34F209DF5A5002DBD9F /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55EC34E209DF5A5002DBD9F /* Preference.storyboard */; };
+		A55EC354209DF86B002DBD9F /* PreferenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55EC353209DF86B002DBD9F /* PreferenceController.swift */; };
+		A55EC357209E809E002DBD9F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55EC356209E809E002DBD9F /* Preferences.swift */; };
 		A566A5D52090C180001406CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D42090C180001406CC /* AppDelegate.swift */; };
 		A566A5D72090C180001406CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D62090C180001406CC /* ViewController.swift */; };
 		A566A5DA2090C180001406CC /* BLESerialPort.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D82090C180001406CC /* BLESerialPort.xcdatamodeld */; };
@@ -37,6 +40,9 @@
 
 /* Begin PBXFileReference section */
 		A535C79D209688B3001BF2F5 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A55EC34E209DF5A5002DBD9F /* Preference.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preference.storyboard; sourceTree = "<group>"; };
+		A55EC353209DF86B002DBD9F /* PreferenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceController.swift; sourceTree = "<group>"; };
+		A55EC356209E809E002DBD9F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		A566A5D12090C180001406CC /* BLESerialPort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLESerialPort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A566A5D42090C180001406CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A566A5D62090C180001406CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +101,32 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		A55EC34D209DF21B002DBD9F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A566A5D62090C180001406CC /* ViewController.swift */,
+				A55EC353209DF86B002DBD9F /* PreferenceController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A55EC350209DF5B6002DBD9F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A566A5DD2090C180001406CC /* Main.storyboard */,
+				A55EC34E209DF5A5002DBD9F /* Preference.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		A55EC355209E8075002DBD9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A55EC356209E809E002DBD9F /* Preferences.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A566A5C82090C180001406CC = {
 			isa = PBXGroup;
 			children = (
@@ -118,12 +150,13 @@
 		A566A5D32090C180001406CC /* BLESerialPort */ = {
 			isa = PBXGroup;
 			children = (
+				A55EC355209E8075002DBD9F /* Model */,
+				A55EC350209DF5B6002DBD9F /* Storyboard */,
+				A55EC34D209DF21B002DBD9F /* ViewController */,
 				A535C79C2096886D001BF2F5 /* Logger */,
 				A535C79B20968858001BF2F5 /* BLE */,
 				A566A5D42090C180001406CC /* AppDelegate.swift */,
-				A566A5D62090C180001406CC /* ViewController.swift */,
 				A566A5DB2090C180001406CC /* Assets.xcassets */,
-				A566A5DD2090C180001406CC /* Main.storyboard */,
 				A566A5E02090C180001406CC /* Info.plist */,
 				A566A5E12090C180001406CC /* BLESerialPort.entitlements */,
 				A566A5D82090C180001406CC /* BLESerialPort.xcdatamodeld */,
@@ -263,6 +296,7 @@
 			files = (
 				A566A5DC2090C180001406CC /* Assets.xcassets in Resources */,
 				A566A5DF2090C180001406CC /* Main.storyboard in Resources */,
+				A55EC34F209DF5A5002DBD9F /* Preference.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A535C79E209688B3001BF2F5 /* Logger.swift in Sources */,
+				A55EC357209E809E002DBD9F /* Preferences.swift in Sources */,
 				A566A5D72090C180001406CC /* ViewController.swift in Sources */,
+				A55EC354209DF86B002DBD9F /* PreferenceController.swift in Sources */,
 				A566A60420921115001406CC /* BLEPeripheral.swift in Sources */,
 				A566A5D52090C180001406CC /* AppDelegate.swift in Sources */,
 				A566A5DA2090C180001406CC /* BLESerialPort.xcdatamodeld in Sources */,
