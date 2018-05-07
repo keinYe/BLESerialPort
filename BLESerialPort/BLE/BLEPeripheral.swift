@@ -12,12 +12,11 @@ import CoreBluetooth
 typealias ReciveData = (String, [UInt8]) -> Void
 
 class BLEPeripheral: NSObject {
-    internal var peripheralManager: CBPeripheralManager
+    fileprivate var peripheralManager: CBPeripheralManager
     let localNameKey =  "BabyBluetoothStubOnOSX";
     var ServiceUUID =  "FFF0";
     var notiyCharacteristicUUID =  "FFF1";
-
-    
+    var isAdvertising = false
     
     fileprivate var reciveData : ReciveData?
     fileprivate var notiyCharacteristic: CBMutableCharacteristic?
@@ -30,6 +29,10 @@ class BLEPeripheral: NSObject {
     
     //publish service and characteristic
     public func publishService(){
+        
+        guard isAdvertising == false else {
+            return
+        }
         
         peripheralManager.removeAllServices()
         
@@ -47,12 +50,19 @@ class BLEPeripheral: NSObject {
         service.characteristics = [notiyCharacteristic]
         peripheralManager.add(service);
     }
-
+    
+    public func stopAdvertising() {
+        guard isAdvertising else {
+            return
+        }
+        peripheralManager.stopAdvertising()
+        isAdvertising = false
+    }
 
 }
 
 extension BLEPeripheral: CBPeripheralManagerDelegate {
-    func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
+    internal func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         Logger.info("\(peripheral)")
         
         switch peripheral.state {
@@ -63,16 +73,29 @@ extension BLEPeripheral: CBPeripheralManagerDelegate {
         }
     }
     
-    func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
+    internal func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
+        
+        guard isAdvertising == false else {
+            return
+        }
+        Logger.info("start advertising")
         peripheralManager.startAdvertising(
             [
                 CBAdvertisementDataServiceUUIDsKey : [CBUUID(string: ServiceUUID)]
                 ,CBAdvertisementDataLocalNameKey : localNameKey
             ]
         )
+        
     }
     
-    func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
+    internal func peripheralManagerDidStartAdvertising(_ peripheral: CBPeripheralManager, error: Error?) {
+        isAdvertising = peripheralManager.isAdvertising
+        Logger.info("\(isAdvertising)")
+    }
+    
+    
+    
+    internal func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
         Logger.info("\(peripheral)")
         //判断是否有读数据的权限
         if(request.characteristic.properties.contains(CBCharacteristicProperties.read))
@@ -85,7 +108,7 @@ extension BLEPeripheral: CBPeripheralManagerDelegate {
         }
     }
     
-    func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
+    internal func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
         Logger.info("\(peripheral)")
         let request:CBATTRequest = requests[0];
         
@@ -107,12 +130,12 @@ extension BLEPeripheral: CBPeripheralManagerDelegate {
         }
     }
     
-    func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didSubscribeTo characteristic: CBCharacteristic) {
+    internal func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didSubscribeTo characteristic: CBCharacteristic) {
         Logger.info("\(peripheral)")
         notiyCharacteristic = characteristic as? CBMutableCharacteristic
     }
     
-    func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didUnsubscribeFrom characteristic: CBCharacteristic) {
+    internal func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didUnsubscribeFrom characteristic: CBCharacteristic) {
         Logger.info("\(peripheral)")
         notiyCharacteristic = nil
     }

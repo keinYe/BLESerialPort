@@ -11,29 +11,22 @@ import CoreBluetooth
 
 class ViewController: NSViewController {
     
-    var peripheralManager: BLEPeripheral?
+    private var peripheralManager: BLEPeripheral?
     
-    @IBOutlet weak var outputScrollView: NSScrollView!
     @IBOutlet var outputTextView: NSTextView!
+    @IBOutlet var inputTextView: NSTextView!
     
     var prefs = Preferencs()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        outputScrollView.scrollerStyle = .overlay
-        outputScrollView.hasVerticalRuler = true
-        outputScrollView.hasHorizontalRuler = true
-        outputScrollView.scrollerKnobStyle = .dark
-        outputScrollView.horizontalScrollElasticity = .automatic
-        outputScrollView.verticalScrollElasticity = .automatic
-        
-        
         // Do any additional setup after loading the view.
+        Logger.info("DidLoad")
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
+        Logger.info("DidAppear")
         peripheralManager = BLEPeripheral()
         setupPrefs()
         _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(ViewController.sendData) , userInfo: nil, repeats: true)
@@ -66,8 +59,16 @@ extension ViewController {
     }
     
     func updateFormPrefs() {
+        // Set BLE UUID
         peripheralManager?.ServiceUUID = prefs.serviceUUID
         peripheralManager?.notiyCharacteristicUUID = prefs.characUUID
+        // Restart BLE advertising
+        
+        Logger.info("\(String(describing: peripheralManager?.isAdvertising))")
+        if (peripheralManager?.isAdvertising)! {
+            peripheralManager?.stopAdvertising()
+            peripheralManager?.publishService()
+        }
     }
 }
 

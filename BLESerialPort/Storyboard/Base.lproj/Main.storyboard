@@ -152,7 +152,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="outputScrollView" destination="7Nt-y1-Peo" id="Sma-hk-qOm"/>
+                        <outlet property="inputTextView" destination="1bc-dL-iaR" id="p5c-rg-odP"/>
                         <outlet property="outputTextView" destination="w13-zE-qxW" id="aAW-jz-KbA"/>
                     </connections>
                 </viewController>
