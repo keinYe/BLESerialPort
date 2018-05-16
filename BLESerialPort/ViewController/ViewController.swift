@@ -13,6 +13,7 @@ class ViewController: NSViewController {
     
     private var peripheralManager: BLEPeripheral?
     
+
     @IBOutlet var outputTextView: NSTextView!
     @IBOutlet var inputTextView: NSTextView!
     
@@ -22,6 +23,14 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         Logger.info("DidLoad")
+        inputTextView.delegate = self
+        //outputTextView.setAccessibilityEdited(false)
+        outputTextView.string = "test"
+        
+        inputTextView.lnv_setUpLineNumberView()
+        
+        
+        
     }
     
     override func viewDidAppear() {
@@ -70,5 +79,39 @@ extension ViewController {
             peripheralManager?.publishService()
         }
     }
+}
+
+extension ViewController: NSTextViewDelegate {
+    func textView(_ textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        Logger.info("\(commandSelector)")
+        if commandSelector == #selector(insertNewline(_:)) {
+            Logger.info("insert new line")
+        }
+        return false
+    }
+    
+    func textView(_ textView: NSTextView, clickedOn cell: NSTextAttachmentCellProtocol, in cellFrame: NSRect, at charIndex: Int) {
+        Logger.info("\(cell)")
+    }
+    
+    func textViewDidChangeSelection(_ notification: Notification) {
+        Logger.info("\(notification)")
+        
+        // 获取所选行内容
+        
+        let selectedRanges:NSArray = inputTextView.selectedRanges as NSArray
+        let text:NSString = inputTextView.string as NSString
+        
+        if selectedRanges.count > 0 {
+            let range:NSRange = selectedRanges.firstObject as! NSRange
+            let v = text.lineRange(for: NSRange(location: range.location + range.length, length: 0))
+            let x = text.substring(with: v)
+            Logger.info("\(selectedRanges)  \(text)  \(range)  \(v)  \(x)")
+        }
+        
+    }
+    
+
+    
 }
 
