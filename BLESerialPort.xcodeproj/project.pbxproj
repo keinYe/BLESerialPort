@@ -10,6 +10,7 @@
 		A53499BE20AB15CA0089253B /* LinuNumberRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */; };
 		A53499C120AB96770089253B /* String+Counting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53499C020AB96770089253B /* String+Counting.swift */; };
 		A535C79E209688B3001BF2F5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535C79D209688B3001BF2F5 /* Logger.swift */; };
+		A543F7D520B309E60002D53C /* dataCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543F7D420B309E60002D53C /* dataCon.swift */; };
 		A55EC34F209DF5A5002DBD9F /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55EC34E209DF5A5002DBD9F /* Preference.storyboard */; };
 		A55EC354209DF86B002DBD9F /* PreferenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55EC353209DF86B002DBD9F /* PreferenceController.swift */; };
 		A55EC357209E809E002DBD9F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55EC356209E809E002DBD9F /* Preferences.swift */; };
@@ -44,6 +45,7 @@
 		A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuNumberRulerView.swift; sourceTree = "<group>"; };
 		A53499C020AB96770089253B /* String+Counting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Counting.swift"; sourceTree = "<group>"; };
 		A535C79D209688B3001BF2F5 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A543F7D420B309E60002D53C /* dataCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataCon.swift; sourceTree = "<group>"; };
 		A55EC34E209DF5A5002DBD9F /* Preference.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preference.storyboard; sourceTree = "<group>"; };
 		A55EC353209DF86B002DBD9F /* PreferenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceController.swift; sourceTree = "<group>"; };
 		A55EC356209E809E002DBD9F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -113,6 +115,14 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		A543F7D320B309540002D53C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A543F7D420B309E60002D53C /* dataCon.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		A55EC34D209DF21B002DBD9F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +173,7 @@
 		A566A5D32090C180001406CC /* BLESerialPort */ = {
 			isa = PBXGroup;
 			children = (
+				A543F7D320B309540002D53C /* Utilities */,
 				A53499BF20AB96310089253B /* Extensions */,
 				A55EC355209E8075002DBD9F /* Model */,
 				A55EC350209DF5B6002DBD9F /* Storyboard */,
@@ -335,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A543F7D520B309E60002D53C /* dataCon.swift in Sources */,
 				A53499BE20AB15CA0089253B /* LinuNumberRulerView.swift in Sources */,
 				A535C79E209688B3001BF2F5 /* Logger.swift in Sources */,
 				A55EC357209E809E002DBD9F /* Preferences.swift in Sources */,

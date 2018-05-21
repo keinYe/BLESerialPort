@@ -95,20 +95,8 @@ extension ViewController: NSTextViewDelegate {
     }
     
     func textViewDidChangeSelection(_ notification: Notification) {
+        // 当前光标所选内容发生改变
         Logger.info("\(notification)")
-        
-        // 获取所选行内容
-        
-        let selectedRanges:NSArray = inputTextView.selectedRanges as NSArray
-        let text:NSString = inputTextView.string as NSString
-        
-        if selectedRanges.count > 0 {
-            let range:NSRange = selectedRanges.firstObject as! NSRange
-            let v = text.lineRange(for: NSRange(location: range.location + range.length, length: 0))
-            let x = text.substring(with: v)
-            Logger.info("\(selectedRanges)  \(text)  \(range)  \(v)  \(x)")
-        }
-        
     }
     
 

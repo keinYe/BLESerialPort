@@ -67,7 +67,53 @@ extension NSTextView {
         
         lineNumberView.needsDisplay = true
     }
+    
+    func stringForLineNumber(lineNumber: Int) -> String? {
+        guard lineNumber > 0 else {
+            return nil
+        }
+        let newLineRegex = try! NSRegularExpression(pattern: "\n", options: [])
+        let visibleGlyphRange = self.layoutManager?.glyphRange(forBoundingRect: self.visibleRect, in: self.textContainer!)
+        
+        let stringMatch = newLineRegex.matches(in: self.string, options: [], range: visibleGlyphRange!)
+        let lineNumber = lineNumber - 1
+        if lineNumber > stringMatch.count {
+            return nil
+        }
+        var range : NSRange = NSRange.init(location: 0, length: 0)
+        if lineNumber == stringMatch.count {
+            range = stringMatch.last?.range ?? range
+        } else {
+            for (index, value) in stringMatch.enumerated() {
+                Logger.info("\(index) \(value)")
+                if index == lineNumber {
+                    range = value.range
+                    range.location = range.location - 1
+                    break
+                }
+            }
+        }
+        let text:NSString = self.string as NSString
+        let v = text.lineRange(for: NSRange(location: range.location + range.length, length: 0))
+        let x = text.substring(with: v)
+        return x
+    }
+    
+    func stringForSelectLine() -> String? {
+        let selectedRanges:NSArray = self.selectedRanges as NSArray
+        let text:NSString = string as NSString
+        
+        if selectedRanges.count > 0 {
+            let range:NSRange = selectedRanges.firstObject as! NSRange
+            let v = text.lineRange(for: NSRange(location: range.location + range.length, length: 0))
+            let x = text.substring(with: v)
+            return x
+        }
+        return nil
+    }
 }
+
+
 
 class LineNumberRulerView: NSRulerView {
     
@@ -97,7 +143,7 @@ class LineNumberRulerView: NSRulerView {
                 
                 let relativePoint = self.convert(NSZeroPoint, from: textView)
                 let lineNumberAttributes = [NSAttributedStringKey.font: textView.font!, NSAttributedStringKey.foregroundColor: NSColor.gray] as [NSAttributedStringKey : Any]
-                
+
                 let drawLineNumber = { (lineNumberString:String, y:CGFloat) -> Void in
                     let attString = NSAttributedString(string: lineNumberString, attributes: lineNumberAttributes)
                     let x = 35 - attString.size().width
@@ -106,11 +152,11 @@ class LineNumberRulerView: NSRulerView {
                 
                 let visibleGlyphRange = layoutManager.glyphRange(forBoundingRect: textView.visibleRect, in: textView.textContainer!)
                 let firstVisibleGlyphCharacterIndex = layoutManager.characterIndexForGlyph(at: visibleGlyphRange.location)
-                
+               
                 let newLineRegex = try! NSRegularExpression(pattern: "\n", options: [])
                 // The line number for the first visible line
                 var lineNumber = newLineRegex.numberOfMatches(in: textView.string, options: [], range: NSMakeRange(0, firstVisibleGlyphCharacterIndex)) + 1
-                
+
                 var glyphIndexForStringLine = visibleGlyphRange.location
                 
                 // Go through each line in the string.
@@ -121,7 +167,7 @@ class LineNumberRulerView: NSRulerView {
                         for: NSMakeRange( layoutManager.characterIndexForGlyph(at: glyphIndexForStringLine), 0 )
                     )
                     let glyphRangeForStringLine = layoutManager.glyphRange(forCharacterRange: characterRangeForStringLine, actualCharacterRange: nil)
-                    
+                   
                     var glyphIndexForGlyphLine = glyphIndexForStringLine
                     var glyphLineCount = 0
                     
@@ -134,7 +180,6 @@ class LineNumberRulerView: NSRulerView {
                         // Range of current "line of glyphs". If a line is wrapped,
                         // then it will have more than one "line of glyphs"
                         let lineRect = layoutManager.lineFragmentRect(forGlyphAt: glyphIndexForGlyphLine, effectiveRange: &effectiveRange, withoutAdditionalLayout: true)
-                        
                         if glyphLineCount > 0 {
                             drawLineNumber("-", lineRect.minY)
                         } else {
