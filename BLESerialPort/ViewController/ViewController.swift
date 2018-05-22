@@ -22,14 +22,8 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        Logger.info("DidLoad")
         inputTextView.delegate = self
-        //outputTextView.setAccessibilityEdited(false)
-        outputTextView.string = "test"
-        
         inputTextView.lnv_setUpLineNumberView()
-        
-        
         
     }
     
@@ -52,6 +46,16 @@ extension ViewController {
     @objc func sendData(t:Timer)->Bool{
         peripheralManager?.sendData(data: [1, 2, 3])
         return true
+    }
+    
+    @IBAction func sendMenuItemSelected(_ sender: Any) {
+        guard let selectString = self.inputTextView.stringForSelectLine() else {
+            return
+        }
+        
+        Logger.info(selectString)
+        let data = stringToHexArray(str: selectString)
+        peripheralManager?.sendData(data: data)
     }
 }
 

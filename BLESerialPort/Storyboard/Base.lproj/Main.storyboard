@@ -37,6 +37,18 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Tools" id="66h-9c-255">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Tools" systemMenu="font" id="4Hx-sD-1iJ">
+                                    <items>
+                                        <menuItem title="Send" keyEquivalent="s" id="heh-r4-Sdl">
+                                            <connections>
+                                                <action selector="sendMenuItemSelected:" target="Ady-hI-5gd" id="tsa-sc-zS6"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
