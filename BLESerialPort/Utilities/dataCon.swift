@@ -39,6 +39,7 @@ func stringToHexArray(str: String) -> [UInt8] {
     guard checkString(str: str) else {
         return [UInt8]()
     }
+    let str = str.trimmingCharacters(in: .newlines)
     let splitedArray = str.characters.split{$0 == " "}.map(String.init)
     let hexArray = splitedArray.map{str in strtoul(str, nil, 16)}.map{data in UInt8(data)}
     return hexArray

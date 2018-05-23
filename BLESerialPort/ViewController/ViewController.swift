@@ -22,15 +22,20 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        inputTextView.delegate = self
+        //inputTextView.delegate = self
         inputTextView.lnv_setUpLineNumberView()
-        
+        outputTextView.lnv_setUpLineNumberView()
+        //outputTextView.layoutManager?.allowsNonContiguousLayout = false
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
         Logger.info("DidAppear")
         peripheralManager = BLEPeripheral()
+        peripheralManager?.registerReciveData(call: {uuid, data in
+            self.outputTextView.string += hexToString(hex: data) + "\n"
+            self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
+        })
         setupPrefs()
         _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(ViewController.sendData) , userInfo: nil, repeats: true)
     }
@@ -50,12 +55,28 @@ extension ViewController {
     
     @IBAction func sendMenuItemSelected(_ sender: Any) {
         guard let selectString = self.inputTextView.stringForSelectLine() else {
+            openAlertPanel()
+            return
+        }
+        
+        guard checkString(str: selectString) else {
+            openAlertPanel()
             return
         }
         
         Logger.info(selectString)
         let data = stringToHexArray(str: selectString)
         peripheralManager?.sendData(data: data)
+    }
+    
+    func openAlertPanel() {
+        let alert = NSAlert()
+
+        alert.addButton(withTitle: "Cancel")
+        alert.messageText = "错误"
+        alert.informativeText = "发送数据错误"
+        alert.alertStyle = NSAlert.Style.critical
+        alert.runModal()
     }
 }
 
@@ -102,8 +123,5 @@ extension ViewController: NSTextViewDelegate {
         // 当前光标所选内容发生改变
         Logger.info("\(notification)")
     }
-    
-
-    
 }
 

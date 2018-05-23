@@ -122,8 +122,9 @@ extension BLEPeripheral: CBPeripheralManagerDelegate {
             let reciveData : Data = request.value!
             let data = Array(UnsafeBufferPointer(start: (reciveData as NSData).bytes.bindMemory(to: UInt8.self, capacity: reciveData.count), count: reciveData.count))
             Logger.info("\(data)")
-            
-            
+            if let recive = self.reciveData {
+                recive(c.uuid.uuidString, data)
+            }
             peripheral .respond(to: request, withResult: CBATTError.success);
         }else{
             peripheral .respond(to: request, withResult: CBATTError.readNotPermitted);
