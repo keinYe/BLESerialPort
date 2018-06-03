@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51D89FC20C0408000C7BB60 /* CycleSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D89FB20C0408000C7BB60 /* CycleSend.swift */; };
 		A53499BE20AB15CA0089253B /* LinuNumberRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */; };
 		A53499C120AB96770089253B /* String+Counting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53499C020AB96770089253B /* String+Counting.swift */; };
 		A535C79E209688B3001BF2F5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535C79D209688B3001BF2F5 /* Logger.swift */; };
 		A543F7D520B309E60002D53C /* dataCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543F7D420B309E60002D53C /* dataCon.swift */; };
+		A549816520BC3F4A00C483B5 /* ConditionalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549816420BC3F4A00C483B5 /* ConditionalController.swift */; };
 		A55EC34F209DF5A5002DBD9F /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55EC34E209DF5A5002DBD9F /* Preference.storyboard */; };
 		A55EC354209DF86B002DBD9F /* PreferenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55EC353209DF86B002DBD9F /* PreferenceController.swift */; };
 		A55EC357209E809E002DBD9F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55EC356209E809E002DBD9F /* Preferences.swift */; };
@@ -22,6 +24,7 @@
 		A566A5EB2090C180001406CC /* BLESerialPortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5EA2090C180001406CC /* BLESerialPortTests.swift */; };
 		A566A5F62090C180001406CC /* BLESerialPortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5F52090C180001406CC /* BLESerialPortUITests.swift */; };
 		A566A60420921115001406CC /* BLEPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A60320921115001406CC /* BLEPeripheral.swift */; };
+		A5CBCE6020BAF817002AA117 /* Auto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CBCE5F20BAF817002AA117 /* Auto.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A51D89FB20C0408000C7BB60 /* CycleSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSend.swift; sourceTree = "<group>"; };
 		A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuNumberRulerView.swift; sourceTree = "<group>"; };
 		A53499C020AB96770089253B /* String+Counting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Counting.swift"; sourceTree = "<group>"; };
 		A535C79D209688B3001BF2F5 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A543F7D420B309E60002D53C /* dataCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataCon.swift; sourceTree = "<group>"; };
+		A549816420BC3F4A00C483B5 /* ConditionalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalController.swift; sourceTree = "<group>"; };
 		A55EC34E209DF5A5002DBD9F /* Preference.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preference.storyboard; sourceTree = "<group>"; };
 		A55EC353209DF86B002DBD9F /* PreferenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceController.swift; sourceTree = "<group>"; };
 		A55EC356209E809E002DBD9F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
@@ -64,6 +69,7 @@
 		A566A5F52090C180001406CC /* BLESerialPortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialPortUITests.swift; sourceTree = "<group>"; };
 		A566A5F72090C180001406CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A566A60320921115001406CC /* BLEPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEPeripheral.swift; sourceTree = "<group>"; };
+		A5CBCE5F20BAF817002AA117 /* Auto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auto.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,7 @@
 				A566A5D62090C180001406CC /* ViewController.swift */,
 				A55EC353209DF86B002DBD9F /* PreferenceController.swift */,
 				A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */,
+				A549816420BC3F4A00C483B5 /* ConditionalController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -138,6 +145,7 @@
 			children = (
 				A566A5DD2090C180001406CC /* Main.storyboard */,
 				A55EC34E209DF5A5002DBD9F /* Preference.storyboard */,
+				A5CBCE5F20BAF817002AA117 /* Auto.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				A55EC356209E809E002DBD9F /* Preferences.swift */,
+				A51D89FB20C0408000C7BB60 /* CycleSend.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,6 +331,7 @@
 				A566A5DC2090C180001406CC /* Assets.xcassets in Resources */,
 				A566A5DF2090C180001406CC /* Main.storyboard in Resources */,
 				A55EC34F209DF5A5002DBD9F /* Preference.storyboard in Resources */,
+				A5CBCE6020BAF817002AA117 /* Auto.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +356,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A51D89FC20C0408000C7BB60 /* CycleSend.swift in Sources */,
 				A543F7D520B309E60002D53C /* dataCon.swift in Sources */,
+				A549816520BC3F4A00C483B5 /* ConditionalController.swift in Sources */,
 				A53499BE20AB15CA0089253B /* LinuNumberRulerView.swift in Sources */,
 				A535C79E209688B3001BF2F5 /* Logger.swift in Sources */,
 				A55EC357209E809E002DBD9F /* Preferences.swift in Sources */,

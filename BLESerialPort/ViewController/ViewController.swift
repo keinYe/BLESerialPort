@@ -35,6 +35,7 @@ class ViewController: NSViewController {
         peripheralManager?.registerReciveData(call: {uuid, data in
             self.outputTextView.string += hexToString(hex: data) + "\n"
             self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
+            
         })
         setupPrefs()
         _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(ViewController.sendData) , userInfo: nil, repeats: true)
@@ -69,6 +70,16 @@ extension ViewController {
         peripheralManager?.sendData(data: data)
     }
     
+    @IBAction func showConditionalWindow(_ sender: Any) {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Auto"), bundle: nil)
+        let conditionalController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ConditionalWindow")) as! NSWindowController
+        if let window = conditionalController.window {
+            let application = NSApplication.shared
+            application.runModal(for: window)
+            window.close()
+        }
+    }
+    
     func openAlertPanel() {
         let alert = NSAlert()
 
@@ -76,7 +87,7 @@ extension ViewController {
         alert.messageText = "错误"
         alert.informativeText = "发送数据错误"
         alert.alertStyle = NSAlert.Style.critical
-        alert.runModal()
+        alert.runModal
     }
 }
 

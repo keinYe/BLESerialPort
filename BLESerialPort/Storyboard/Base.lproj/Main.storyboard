@@ -46,6 +46,12 @@
                                                 <action selector="sendMenuItemSelected:" target="Ady-hI-5gd" id="tsa-sc-zS6"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Auto" id="Iaq-Tg-Rco">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showConditionalWindow:" target="Ady-hI-5gd" id="wRo-ss-DAw"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -89,7 +95,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="61" y="352"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">

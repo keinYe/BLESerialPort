@@ -116,6 +116,7 @@ DQ
                     </connections>
                 </viewController>
                 <customObject id="cD3-xb-NDu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="fBQ-3F-mBV"/>
             </objects>
             <point key="canvasLocation" x="506" y="246"/>
         </scene>
