@@ -43,13 +43,13 @@
                                     <items>
                                         <menuItem title="Send" keyEquivalent="s" id="heh-r4-Sdl">
                                             <connections>
-                                                <action selector="sendMenuItemSelected:" target="Ady-hI-5gd" id="tsa-sc-zS6"/>
+                                                <action selector="showConditionalWindow:" target="Ady-hI-5gd" id="3gy-js-8TN"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Auto" id="Iaq-Tg-Rco">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="showConditionalWindow:" target="Ady-hI-5gd" id="wRo-ss-DAw"/>
+                                                <action selector="showConditionalWindow:" target="Ady-hI-5gd" id="swP-6d-kHD"/>
                                             </connections>
                                         </menuItem>
                                     </items>

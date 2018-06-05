@@ -64,7 +64,7 @@ struct CycleSend {
         var data = [CycleData]()
         
         for i in 1 ... 20 {
-            data.append(CycleData.init(number: "\(i)", input: "1", output: "1"))
+            data.append(CycleData.init(number: "\(i)", input: "", output: ""))
         }
         return data
     }

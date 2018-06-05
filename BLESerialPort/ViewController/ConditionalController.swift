@@ -30,14 +30,21 @@ class ConditionalController: NSViewController {
 extension ConditionalController {
     @IBAction func dismissConditionalWindow(_ sender: NSButton) {
         if sender.title == "OK" {
+            let data = cycleData.filter { data in
+                return (!data.input.isEmpty && Int(data.input) == nil) || (!data.output.isEmpty && Int(data.output) == nil)
+            }
+            Logger.info("\(data.count)")
+            guard data.count == 0 else {
+                return
+            }
             cycle.data = cycleData
         }
-        
-        let application = NSApplication.shared
-        application.stopModal()
+        else if sender.title == "Cancel" {
+            cycleData = cycle.data
+        }
         Logger.info("\(sender.title)")
-        
-        
+//        self.dismiss(sender)
+        NSApplication.shared.stopModal()
     }
 }
 
