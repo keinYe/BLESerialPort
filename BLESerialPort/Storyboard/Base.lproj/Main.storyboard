@@ -43,7 +43,7 @@
                                     <items>
                                         <menuItem title="Send" keyEquivalent="s" id="heh-r4-Sdl">
                                             <connections>
-                                                <action selector="showConditionalWindow:" target="Ady-hI-5gd" id="3gy-js-8TN"/>
+                                                <action selector="sendMenuItemSelected:" target="Ady-hI-5gd" id="Or1-yq-4ya"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Auto" id="Iaq-Tg-Rco">

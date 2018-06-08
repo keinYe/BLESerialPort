@@ -10,7 +10,6 @@ import Foundation
 
 class CycleData:NSObject, NSCoding{
 
-    
     @objc dynamic var number : String = ""
     @objc dynamic var input : String = ""
     @objc dynamic var output : String = ""
@@ -49,7 +48,6 @@ struct CycleSend {
                 if let value = NSKeyedUnarchiver.unarchiveObject(with: savedValue) {
                     return value as! [CycleData]
                 }
-                return cread()
             }
             return cread()
         }

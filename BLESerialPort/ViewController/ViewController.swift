@@ -18,13 +18,15 @@ class ViewController: NSViewController {
     @IBOutlet var inputTextView: NSTextView!
     
     var prefs = Preferencs()
+    var inputText = InputText()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //inputTextView.delegate = self
+        inputTextView.delegate = self
         inputTextView.lnv_setUpLineNumberView()
         outputTextView.lnv_setUpLineNumberView()
+        inputTextView.string = inputText.str
         //outputTextView.layoutManager?.allowsNonContiguousLayout = false
     }
     
@@ -35,6 +37,7 @@ class ViewController: NSViewController {
         peripheralManager?.registerReciveData(call: {uuid, data in
             self.outputTextView.string += hexToString(hex: data) + "\n"
             self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
+            Logger.info("\(String(describing: self.inputText.getLineNumber(form: hexToString(hex: data))))")
             
         })
         setupPrefs()
@@ -134,6 +137,9 @@ extension ViewController: NSTextViewDelegate {
     func textViewDidChangeSelection(_ notification: Notification) {
         // 当前光标所选内容发生改变
         Logger.info("\(notification)")
+        if (inputText.str != inputTextView.string) {
+            inputText.str = inputTextView.string
+        }
     }
 }
 

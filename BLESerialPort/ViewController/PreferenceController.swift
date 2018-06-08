@@ -16,14 +16,11 @@ class PreferenceController: NSViewController {
     var prefs = Preferencs()
     
     override func viewDidLoad() {
-
         super.viewDidLoad()
         // Do view setup here.
         UUIDTextField.stringValue = prefs.serviceUUID
         CharacUUIDTextField.stringValue = prefs.characUUID
-        
     }
-    
     
     override func viewWillDisappear() {
         super.viewWillDisappear()
