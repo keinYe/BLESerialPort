@@ -60,10 +60,20 @@ struct CycleSend {
     
     private func cread() -> [CycleData] {
         var data = [CycleData]()
-        
         for i in 1 ... 20 {
             data.append(CycleData.init(number: "\(i)", input: "", output: ""))
         }
         return data
+    }
+    
+    func getSendLine(form inputLine: String) -> Int? {
+        for tmpData in data {
+            Logger.info(tmpData.input + "  " + inputLine)
+            if tmpData.input == inputLine {
+                Logger.info(tmpData.output)
+                return Int(tmpData.output)
+            }
+        }
+        return nil
     }
 }

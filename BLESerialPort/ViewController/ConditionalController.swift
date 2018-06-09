@@ -33,10 +33,11 @@ extension ConditionalController {
             let data = cycleData.filter { data in
                 return (!data.input.isEmpty && Int(data.input) == nil) || (!data.output.isEmpty && Int(data.output) == nil)
             }
-            Logger.info("\(data.count)")
+            
             guard data.count == 0 else {
                 return
             }
+            Logger.info("\(data.count)")
             cycle.data = cycleData
         }
         else if sender.title == "Cancel" {

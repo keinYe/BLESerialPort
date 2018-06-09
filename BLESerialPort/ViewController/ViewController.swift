@@ -19,6 +19,7 @@ class ViewController: NSViewController {
     
     var prefs = Preferencs()
     var inputText = InputText()
+    var cycleData = CycleSend()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +38,19 @@ class ViewController: NSViewController {
         peripheralManager?.registerReciveData(call: {uuid, data in
             self.outputTextView.string += hexToString(hex: data) + "\n"
             self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
-            Logger.info("\(String(describing: self.inputText.getLineNumber(form: hexToString(hex: data))))")
+            if let inputLine = self.inputText.getLineNumber(form: hexToString(hex: data)) {
+                if let outputLine = self.cycleData.getSendLine(form: "\(inputLine + 1)") {
+                    if let outputString = self.inputTextView.stringForLineNumber(lineNumber: outputLine) {
+                        Logger.info(outputString)
+                        self.peripheralManager?.sendData(data: stringToHexArray(str: outputString))
+                    }
+                }
+            }
+
             
         })
         setupPrefs()
-        _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(ViewController.sendData) , userInfo: nil, repeats: true)
+        //_ = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(ViewController.sendData) , userInfo: nil, repeats: true)
     }
 
     override var representedObject: Any? {
@@ -58,6 +67,7 @@ extension ViewController {
     }
     
     @IBAction func sendMenuItemSelected(_ sender: Any) {
+        Logger.info("\(sender)")
         guard let selectString = self.inputTextView.stringForSelectLine() else {
             openAlertPanel()
             return
