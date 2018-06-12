@@ -11,7 +11,10 @@ import Cocoa
 class PreferenceController: NSViewController {
 
     @IBOutlet weak var UUIDTextField: NSTextField!
-    @IBOutlet weak var CharacUUIDTextField: NSTextField!
+    
+    @IBOutlet weak var readUUIDTextField: NSTextField!
+    @IBOutlet weak var writeUUIDTextField: NSTextField!
+    @IBOutlet weak var notifyUUIDTextField: NSTextField!
     
     var prefs = Preferencs()
     
@@ -19,7 +22,10 @@ class PreferenceController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         UUIDTextField.stringValue = prefs.serviceUUID
-        CharacUUIDTextField.stringValue = prefs.characUUID
+        readUUIDTextField.stringValue = prefs.readUUID
+        writeUUIDTextField.stringValue = prefs.writeUUID
+        notifyUUIDTextField.stringValue = prefs.notifyUUID
+        //CharacUUIDTextField.stringValue = prefs.characUUID
     }
     
     override func viewWillDisappear() {
@@ -36,7 +42,9 @@ class PreferenceController: NSViewController {
     
     func saveNewPrefs() {
         prefs.serviceUUID = UUIDTextField.stringValue
-        prefs.characUUID = CharacUUIDTextField.stringValue
+        prefs.readUUID = readUUIDTextField.stringValue
+        prefs.writeUUID = writeUUIDTextField.stringValue
+        prefs.notifyUUID = notifyUUIDTextField.stringValue
         
         NotificationCenter.default.post(name: Notification.Name(rawValue: "PrefsChanged"),
                                         object: nil)

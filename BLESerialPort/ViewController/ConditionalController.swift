@@ -37,14 +37,11 @@ extension ConditionalController {
             guard data.count == 0 else {
                 return
             }
-            Logger.info("\(data.count)")
             cycle.data = cycleData
         }
         else if sender.title == "Cancel" {
             cycleData = cycle.data
         }
-        Logger.info("\(sender.title)")
-//        self.dismiss(sender)
         NSApplication.shared.stopModal()
     }
 }

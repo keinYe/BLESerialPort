@@ -2,7 +2,7 @@
 //  BLESerialPortUITests.swift
 //  BLESerialPortUITests
 //
-//  Created by keinYe on 2018/4/25.
+//  Created by keinYe on 2018/6/12.
 //  Copyright © 2018年 keinYe. All rights reserved.
 //
 

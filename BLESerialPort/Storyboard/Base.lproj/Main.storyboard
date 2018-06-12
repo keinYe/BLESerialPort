@@ -170,7 +170,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="inputLineNumberScrollView" destination="JLd-Wt-Tnu" id="KsH-UA-gf0"/>
                         <outlet property="inputTextView" destination="1bc-dL-iaR" id="64f-l8-ZNS"/>
                         <outlet property="outputTextView" destination="w13-zE-qxW" id="DiD-vO-i0u"/>
                     </connections>

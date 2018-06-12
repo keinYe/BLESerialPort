@@ -2,12 +2,11 @@
 //  BLESerialPortTests.swift
 //  BLESerialPortTests
 //
-//  Created by keinYe on 2018/4/25.
+//  Created by keinYe on 2018/6/12.
 //  Copyright © 2018年 keinYe. All rights reserved.
 //
 
 import XCTest
-@testable import BLESerialPort
 
 class BLESerialPortTests: XCTestCase {
     

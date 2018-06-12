@@ -15,7 +15,9 @@ class BLEPeripheral: NSObject {
     fileprivate var peripheralManager: CBPeripheralManager
     let localNameKey =  "BabyBluetoothStubOnOSX";
     var ServiceUUID =  "FFF0";
-    var notiyCharacteristicUUID =  "FFF1";
+    var readCharacteristicUUID = "FFF1";
+    var writeCharacteristicUUID = "FFF2";
+    var notiyCharacteristicUUID =  "FFF3";
     var isAdvertising = false
     
     fileprivate var reciveData : ReciveData?
@@ -36,7 +38,11 @@ class BLEPeripheral: NSObject {
         
         peripheralManager.removeAllServices()
         
-        let notiyCharacteristic = CBMutableCharacteristic(type: CBUUID(string: notiyCharacteristicUUID), properties:  [.notify, .read, .write], value: nil, permissions: [.readable, .writeable])
+        let readCharacteristic = CBMutableCharacteristic(type: CBUUID(string: readCharacteristicUUID), properties:  .read, value: nil, permissions: [.readable])
+        
+        let writeCharacteristic = CBMutableCharacteristic(type: CBUUID(string: writeCharacteristicUUID), properties:  .write, value: nil, permissions: [.writeable])
+        
+        let notiyCharacteristic = CBMutableCharacteristic(type: CBUUID(string: notiyCharacteristicUUID), properties:  .notify, value: nil, permissions: [.readable])
 
         
         //设置description
@@ -47,7 +53,7 @@ class BLEPeripheral: NSObject {
         
         //设置service
         let service:CBMutableService =  CBMutableService(type: CBUUID(string: ServiceUUID), primary: true)
-        service.characteristics = [notiyCharacteristic]
+        service.characteristics = [readCharacteristic, writeCharacteristic, notiyCharacteristic]
         peripheralManager.add(service);
     }
     

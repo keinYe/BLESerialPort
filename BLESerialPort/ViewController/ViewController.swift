@@ -120,7 +120,7 @@ extension ViewController {
     func updateFormPrefs() {
         // Set BLE UUID
         peripheralManager?.ServiceUUID = prefs.serviceUUID
-        peripheralManager?.notiyCharacteristicUUID = prefs.characUUID
+        //peripheralManager?.notiyCharacteristicUUID = prefs.characUUID
         // Restart BLE advertising
         
         Logger.info("\(String(describing: peripheralManager?.isAdvertising))")
