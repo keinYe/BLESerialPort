@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A50F006B20D0062A00EF78B1 /* BLESerialPortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F006A20D0062A00EF78B1 /* BLESerialPortTests.swift */; };
 		A50F007920D0065100EF78B1 /* BLESerialPortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F007820D0065100EF78B1 /* BLESerialPortUITests.swift */; };
+		A50F008120D0074400EF78B1 /* dataConTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F008020D0074400EF78B1 /* dataConTests.swift */; };
 		A512938B20CAB7F1000DE388 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = A512938A20CAB7F1000DE388 /* Input.swift */; };
 		A51D89FC20C0408000C7BB60 /* CycleSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D89FB20C0408000C7BB60 /* CycleSend.swift */; };
 		A53499BE20AB15CA0089253B /* LinuNumberRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */; };
@@ -47,11 +47,11 @@
 
 /* Begin PBXFileReference section */
 		A50F006820D0062A00EF78B1 /* BLESerialPortTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESerialPortTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A50F006A20D0062A00EF78B1 /* BLESerialPortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialPortTests.swift; sourceTree = "<group>"; };
 		A50F006C20D0062A00EF78B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A50F007620D0065100EF78B1 /* BLESerialPortUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESerialPortUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50F007820D0065100EF78B1 /* BLESerialPortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialPortUITests.swift; sourceTree = "<group>"; };
 		A50F007A20D0065100EF78B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A50F008020D0074400EF78B1 /* dataConTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataConTests.swift; sourceTree = "<group>"; };
 		A512938A20CAB7F1000DE388 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		A51D89FB20C0408000C7BB60 /* CycleSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSend.swift; sourceTree = "<group>"; };
 		A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuNumberRulerView.swift; sourceTree = "<group>"; };
@@ -102,8 +102,8 @@
 		A50F006920D0062A00EF78B1 /* BLESerialPortTests */ = {
 			isa = PBXGroup;
 			children = (
-				A50F006A20D0062A00EF78B1 /* BLESerialPortTests.swift */,
 				A50F006C20D0062A00EF78B1 /* Info.plist */,
+				A50F008020D0074400EF78B1 /* dataConTests.swift */,
 			);
 			path = BLESerialPortTests;
 			sourceTree = "<group>";
@@ -359,7 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A50F006B20D0062A00EF78B1 /* BLESerialPortTests.swift in Sources */,
+				A50F008120D0074400EF78B1 /* dataConTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
