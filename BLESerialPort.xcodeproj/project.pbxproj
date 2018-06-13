@@ -7,26 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50F007920D0065100EF78B1 /* BLESerialPortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F007820D0065100EF78B1 /* BLESerialPortUITests.swift */; };
+		A50F008120D0074400EF78B1 /* dataConTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F008020D0074400EF78B1 /* dataConTests.swift */; };
+		A512938B20CAB7F1000DE388 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = A512938A20CAB7F1000DE388 /* Input.swift */; };
+		A51D89FC20C0408000C7BB60 /* CycleSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D89FB20C0408000C7BB60 /* CycleSend.swift */; };
+		A53499BE20AB15CA0089253B /* LinuNumberRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */; };
+		A53499C120AB96770089253B /* String+Counting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53499C020AB96770089253B /* String+Counting.swift */; };
 		A535C79E209688B3001BF2F5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535C79D209688B3001BF2F5 /* Logger.swift */; };
+		A543F7D520B309E60002D53C /* dataCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543F7D420B309E60002D53C /* dataCon.swift */; };
+		A549816520BC3F4A00C483B5 /* ConditionalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549816420BC3F4A00C483B5 /* ConditionalController.swift */; };
+		A55EC34F209DF5A5002DBD9F /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55EC34E209DF5A5002DBD9F /* Preference.storyboard */; };
+		A55EC354209DF86B002DBD9F /* PreferenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55EC353209DF86B002DBD9F /* PreferenceController.swift */; };
+		A55EC357209E809E002DBD9F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55EC356209E809E002DBD9F /* Preferences.swift */; };
 		A566A5D52090C180001406CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D42090C180001406CC /* AppDelegate.swift */; };
 		A566A5D72090C180001406CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D62090C180001406CC /* ViewController.swift */; };
 		A566A5DA2090C180001406CC /* BLESerialPort.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D82090C180001406CC /* BLESerialPort.xcdatamodeld */; };
 		A566A5DC2090C180001406CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A566A5DB2090C180001406CC /* Assets.xcassets */; };
 		A566A5DF2090C180001406CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A566A5DD2090C180001406CC /* Main.storyboard */; };
-		A566A5EB2090C180001406CC /* BLESerialPortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5EA2090C180001406CC /* BLESerialPortTests.swift */; };
-		A566A5F62090C180001406CC /* BLESerialPortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5F52090C180001406CC /* BLESerialPortUITests.swift */; };
 		A566A60420921115001406CC /* BLEPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A60320921115001406CC /* BLEPeripheral.swift */; };
+		A5CBCE6020BAF817002AA117 /* Auto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CBCE5F20BAF817002AA117 /* Auto.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A566A5E72090C180001406CC /* PBXContainerItemProxy */ = {
+		A50F006D20D0062A00EF78B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A566A5C92090C180001406CC /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A566A5D02090C180001406CC;
 			remoteInfo = BLESerialPort;
 		};
-		A566A5F22090C180001406CC /* PBXContainerItemProxy */ = {
+		A50F007B20D0065100EF78B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A566A5C92090C180001406CC /* Project object */;
 			proxyType = 1;
@@ -36,7 +46,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A50F006820D0062A00EF78B1 /* BLESerialPortTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESerialPortTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50F006C20D0062A00EF78B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A50F007620D0065100EF78B1 /* BLESerialPortUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESerialPortUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50F007820D0065100EF78B1 /* BLESerialPortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialPortUITests.swift; sourceTree = "<group>"; };
+		A50F007A20D0065100EF78B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A50F008020D0074400EF78B1 /* dataConTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataConTests.swift; sourceTree = "<group>"; };
+		A512938A20CAB7F1000DE388 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		A51D89FB20C0408000C7BB60 /* CycleSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSend.swift; sourceTree = "<group>"; };
+		A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuNumberRulerView.swift; sourceTree = "<group>"; };
+		A53499C020AB96770089253B /* String+Counting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Counting.swift"; sourceTree = "<group>"; };
 		A535C79D209688B3001BF2F5 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A543F7D420B309E60002D53C /* dataCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataCon.swift; sourceTree = "<group>"; };
+		A549816420BC3F4A00C483B5 /* ConditionalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalController.swift; sourceTree = "<group>"; };
+		A55EC34E209DF5A5002DBD9F /* Preference.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preference.storyboard; sourceTree = "<group>"; };
+		A55EC353209DF86B002DBD9F /* PreferenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceController.swift; sourceTree = "<group>"; };
+		A55EC356209E809E002DBD9F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		A566A5D12090C180001406CC /* BLESerialPort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLESerialPort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A566A5D42090C180001406CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A566A5D62090C180001406CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,31 +70,26 @@
 		A566A5DE2090C180001406CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A566A5E02090C180001406CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A566A5E12090C180001406CC /* BLESerialPort.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BLESerialPort.entitlements; sourceTree = "<group>"; };
-		A566A5E62090C180001406CC /* BLESerialPortTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESerialPortTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A566A5EA2090C180001406CC /* BLESerialPortTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialPortTests.swift; sourceTree = "<group>"; };
-		A566A5EC2090C180001406CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A566A5F12090C180001406CC /* BLESerialPortUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESerialPortUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A566A5F52090C180001406CC /* BLESerialPortUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLESerialPortUITests.swift; sourceTree = "<group>"; };
-		A566A5F72090C180001406CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A566A60320921115001406CC /* BLEPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEPeripheral.swift; sourceTree = "<group>"; };
+		A5CBCE5F20BAF817002AA117 /* Auto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auto.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A50F006520D0062A00EF78B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A50F007320D0065100EF78B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A566A5CE2090C180001406CC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A566A5E32090C180001406CC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A566A5EE2090C180001406CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -79,6 +99,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A50F006920D0062A00EF78B1 /* BLESerialPortTests */ = {
+			isa = PBXGroup;
+			children = (
+				A50F006C20D0062A00EF78B1 /* Info.plist */,
+				A50F008020D0074400EF78B1 /* dataConTests.swift */,
+			);
+			path = BLESerialPortTests;
+			sourceTree = "<group>";
+		};
+		A50F007720D0065100EF78B1 /* BLESerialPortUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A50F007820D0065100EF78B1 /* BLESerialPortUITests.swift */,
+				A50F007A20D0065100EF78B1 /* Info.plist */,
+			);
+			path = BLESerialPortUITests;
+			sourceTree = "<group>";
+		};
+		A53499BF20AB96310089253B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A53499C020AB96770089253B /* String+Counting.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A535C79B20968858001BF2F5 /* BLE */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,12 +141,51 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		A543F7D320B309540002D53C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A543F7D420B309E60002D53C /* dataCon.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A55EC34D209DF21B002DBD9F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A566A5D62090C180001406CC /* ViewController.swift */,
+				A55EC353209DF86B002DBD9F /* PreferenceController.swift */,
+				A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */,
+				A549816420BC3F4A00C483B5 /* ConditionalController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A55EC350209DF5B6002DBD9F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A566A5DD2090C180001406CC /* Main.storyboard */,
+				A55EC34E209DF5A5002DBD9F /* Preference.storyboard */,
+				A5CBCE5F20BAF817002AA117 /* Auto.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		A55EC355209E8075002DBD9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A55EC356209E809E002DBD9F /* Preferences.swift */,
+				A51D89FB20C0408000C7BB60 /* CycleSend.swift */,
+				A512938A20CAB7F1000DE388 /* Input.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A566A5C82090C180001406CC = {
 			isa = PBXGroup;
 			children = (
 				A566A5D32090C180001406CC /* BLESerialPort */,
-				A566A5E92090C180001406CC /* BLESerialPortTests */,
-				A566A5F42090C180001406CC /* BLESerialPortUITests */,
+				A50F006920D0062A00EF78B1 /* BLESerialPortTests */,
+				A50F007720D0065100EF78B1 /* BLESerialPortUITests */,
 				A566A5D22090C180001406CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,8 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				A566A5D12090C180001406CC /* BLESerialPort.app */,
-				A566A5E62090C180001406CC /* BLESerialPortTests.xctest */,
-				A566A5F12090C180001406CC /* BLESerialPortUITests.xctest */,
+				A50F006820D0062A00EF78B1 /* BLESerialPortTests.xctest */,
+				A50F007620D0065100EF78B1 /* BLESerialPortUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,12 +203,15 @@
 		A566A5D32090C180001406CC /* BLESerialPort */ = {
 			isa = PBXGroup;
 			children = (
+				A543F7D320B309540002D53C /* Utilities */,
+				A53499BF20AB96310089253B /* Extensions */,
+				A55EC355209E8075002DBD9F /* Model */,
+				A55EC350209DF5B6002DBD9F /* Storyboard */,
+				A55EC34D209DF21B002DBD9F /* ViewController */,
 				A535C79C2096886D001BF2F5 /* Logger */,
 				A535C79B20968858001BF2F5 /* BLE */,
 				A566A5D42090C180001406CC /* AppDelegate.swift */,
-				A566A5D62090C180001406CC /* ViewController.swift */,
 				A566A5DB2090C180001406CC /* Assets.xcassets */,
-				A566A5DD2090C180001406CC /* Main.storyboard */,
 				A566A5E02090C180001406CC /* Info.plist */,
 				A566A5E12090C180001406CC /* BLESerialPort.entitlements */,
 				A566A5D82090C180001406CC /* BLESerialPort.xcdatamodeld */,
@@ -131,27 +219,45 @@
 			path = BLESerialPort;
 			sourceTree = "<group>";
 		};
-		A566A5E92090C180001406CC /* BLESerialPortTests */ = {
-			isa = PBXGroup;
-			children = (
-				A566A5EA2090C180001406CC /* BLESerialPortTests.swift */,
-				A566A5EC2090C180001406CC /* Info.plist */,
-			);
-			path = BLESerialPortTests;
-			sourceTree = "<group>";
-		};
-		A566A5F42090C180001406CC /* BLESerialPortUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A566A5F52090C180001406CC /* BLESerialPortUITests.swift */,
-				A566A5F72090C180001406CC /* Info.plist */,
-			);
-			path = BLESerialPortUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A50F006720D0062A00EF78B1 /* BLESerialPortTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A50F006F20D0062A00EF78B1 /* Build configuration list for PBXNativeTarget "BLESerialPortTests" */;
+			buildPhases = (
+				A50F006420D0062A00EF78B1 /* Sources */,
+				A50F006520D0062A00EF78B1 /* Frameworks */,
+				A50F006620D0062A00EF78B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A50F006E20D0062A00EF78B1 /* PBXTargetDependency */,
+			);
+			name = BLESerialPortTests;
+			productName = BLESerialPortTests;
+			productReference = A50F006820D0062A00EF78B1 /* BLESerialPortTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A50F007520D0065100EF78B1 /* BLESerialPortUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A50F007D20D0065100EF78B1 /* Build configuration list for PBXNativeTarget "BLESerialPortUITests" */;
+			buildPhases = (
+				A50F007220D0065100EF78B1 /* Sources */,
+				A50F007320D0065100EF78B1 /* Frameworks */,
+				A50F007420D0065100EF78B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A50F007C20D0065100EF78B1 /* PBXTargetDependency */,
+			);
+			name = BLESerialPortUITests;
+			productName = BLESerialPortUITests;
+			productReference = A50F007620D0065100EF78B1 /* BLESerialPortUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		A566A5D02090C180001406CC /* BLESerialPort */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A566A5FA2090C180001406CC /* Build configuration list for PBXNativeTarget "BLESerialPort" */;
@@ -169,42 +275,6 @@
 			productReference = A566A5D12090C180001406CC /* BLESerialPort.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A566A5E52090C180001406CC /* BLESerialPortTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A566A5FD2090C180001406CC /* Build configuration list for PBXNativeTarget "BLESerialPortTests" */;
-			buildPhases = (
-				A566A5E22090C180001406CC /* Sources */,
-				A566A5E32090C180001406CC /* Frameworks */,
-				A566A5E42090C180001406CC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A566A5E82090C180001406CC /* PBXTargetDependency */,
-			);
-			name = BLESerialPortTests;
-			productName = BLESerialPortTests;
-			productReference = A566A5E62090C180001406CC /* BLESerialPortTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A566A5F02090C180001406CC /* BLESerialPortUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A566A6002090C180001406CC /* Build configuration list for PBXNativeTarget "BLESerialPortUITests" */;
-			buildPhases = (
-				A566A5ED2090C180001406CC /* Sources */,
-				A566A5EE2090C180001406CC /* Frameworks */,
-				A566A5EF2090C180001406CC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A566A5F32090C180001406CC /* PBXTargetDependency */,
-			);
-			name = BLESerialPortUITests;
-			productName = BLESerialPortUITests;
-			productReference = A566A5F12090C180001406CC /* BLESerialPortUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -215,6 +285,16 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = keinYe;
 				TargetAttributes = {
+					A50F006720D0062A00EF78B1 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A566A5D02090C180001406CC;
+					};
+					A50F007520D0065100EF78B1 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A566A5D02090C180001406CC;
+					};
 					A566A5D02090C180001406CC = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
@@ -223,16 +303,6 @@
 								enabled = 1;
 							};
 						};
-					};
-					A566A5E52090C180001406CC = {
-						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = A566A5D02090C180001406CC;
-					};
-					A566A5F02090C180001406CC = {
-						CreatedOnToolsVersion = 9.0.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = A566A5D02090C180001406CC;
 					};
 				};
 			};
@@ -250,79 +320,89 @@
 			projectRoot = "";
 			targets = (
 				A566A5D02090C180001406CC /* BLESerialPort */,
-				A566A5E52090C180001406CC /* BLESerialPortTests */,
-				A566A5F02090C180001406CC /* BLESerialPortUITests */,
+				A50F006720D0062A00EF78B1 /* BLESerialPortTests */,
+				A50F007520D0065100EF78B1 /* BLESerialPortUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A50F006620D0062A00EF78B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A50F007420D0065100EF78B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A566A5CF2090C180001406CC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A566A5DC2090C180001406CC /* Assets.xcassets in Resources */,
 				A566A5DF2090C180001406CC /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A566A5E42090C180001406CC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A566A5EF2090C180001406CC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				A55EC34F209DF5A5002DBD9F /* Preference.storyboard in Resources */,
+				A5CBCE6020BAF817002AA117 /* Auto.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A50F006420D0062A00EF78B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50F008120D0074400EF78B1 /* dataConTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A50F007220D0065100EF78B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50F007920D0065100EF78B1 /* BLESerialPortUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A566A5CD2090C180001406CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A51D89FC20C0408000C7BB60 /* CycleSend.swift in Sources */,
+				A543F7D520B309E60002D53C /* dataCon.swift in Sources */,
+				A549816520BC3F4A00C483B5 /* ConditionalController.swift in Sources */,
+				A53499BE20AB15CA0089253B /* LinuNumberRulerView.swift in Sources */,
 				A535C79E209688B3001BF2F5 /* Logger.swift in Sources */,
+				A55EC357209E809E002DBD9F /* Preferences.swift in Sources */,
 				A566A5D72090C180001406CC /* ViewController.swift in Sources */,
+				A55EC354209DF86B002DBD9F /* PreferenceController.swift in Sources */,
 				A566A60420921115001406CC /* BLEPeripheral.swift in Sources */,
 				A566A5D52090C180001406CC /* AppDelegate.swift in Sources */,
+				A53499C120AB96770089253B /* String+Counting.swift in Sources */,
+				A512938B20CAB7F1000DE388 /* Input.swift in Sources */,
 				A566A5DA2090C180001406CC /* BLESerialPort.xcdatamodeld in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A566A5E22090C180001406CC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A566A5EB2090C180001406CC /* BLESerialPortTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A566A5ED2090C180001406CC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A566A5F62090C180001406CC /* BLESerialPortUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A566A5E82090C180001406CC /* PBXTargetDependency */ = {
+		A50F006E20D0062A00EF78B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A566A5D02090C180001406CC /* BLESerialPort */;
-			targetProxy = A566A5E72090C180001406CC /* PBXContainerItemProxy */;
+			targetProxy = A50F006D20D0062A00EF78B1 /* PBXContainerItemProxy */;
 		};
-		A566A5F32090C180001406CC /* PBXTargetDependency */ = {
+		A50F007C20D0065100EF78B1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A566A5D02090C180001406CC /* BLESerialPort */;
-			targetProxy = A566A5F22090C180001406CC /* PBXContainerItemProxy */;
+			targetProxy = A50F007B20D0065100EF78B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -338,6 +418,68 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A50F007020D0062A00EF78B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V4QZB8WBGM;
+				INFOPLIST_FILE = BLESerialPortTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPortTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLESerialPort.app/Contents/MacOS/BLESerialPort";
+			};
+			name = Debug;
+		};
+		A50F007120D0062A00EF78B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V4QZB8WBGM;
+				INFOPLIST_FILE = BLESerialPortTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPortTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLESerialPort.app/Contents/MacOS/BLESerialPort";
+			};
+			name = Release;
+		};
+		A50F007E20D0065100EF78B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V4QZB8WBGM;
+				INFOPLIST_FILE = BLESerialPortUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPortUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = BLESerialPort;
+			};
+			name = Debug;
+		};
+		A50F007F20D0065100EF78B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V4QZB8WBGM;
+				INFOPLIST_FILE = BLESerialPortUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPortUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = BLESerialPort;
+			};
+			name = Release;
+		};
 		A566A5F82090C180001406CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -392,6 +534,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				kk = "";
 			};
 			name = Debug;
 		};
@@ -441,6 +584,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				kk = "";
 			};
 			name = Release;
 		};
@@ -476,75 +620,27 @@
 			};
 			name = Release;
 		};
-		A566A5FE2090C180001406CC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V4QZB8WBGM;
-				INFOPLIST_FILE = BLESerialPortTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPortTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLESerialPort.app/Contents/MacOS/BLESerialPort";
-			};
-			name = Debug;
-		};
-		A566A5FF2090C180001406CC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V4QZB8WBGM;
-				INFOPLIST_FILE = BLESerialPortTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPortTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLESerialPort.app/Contents/MacOS/BLESerialPort";
-			};
-			name = Release;
-		};
-		A566A6012090C180001406CC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V4QZB8WBGM;
-				INFOPLIST_FILE = BLESerialPortUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPortUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = BLESerialPort;
-			};
-			name = Debug;
-		};
-		A566A6022090C180001406CC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = V4QZB8WBGM;
-				INFOPLIST_FILE = BLESerialPortUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.keinye.BLESerialPortUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = BLESerialPort;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A50F006F20D0062A00EF78B1 /* Build configuration list for PBXNativeTarget "BLESerialPortTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A50F007020D0062A00EF78B1 /* Debug */,
+				A50F007120D0062A00EF78B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A50F007D20D0065100EF78B1 /* Build configuration list for PBXNativeTarget "BLESerialPortUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A50F007E20D0065100EF78B1 /* Debug */,
+				A50F007F20D0065100EF78B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A566A5CC2090C180001406CC /* Build configuration list for PBXProject "BLESerialPort" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -559,24 +655,6 @@
 			buildConfigurations = (
 				A566A5FB2090C180001406CC /* Debug */,
 				A566A5FC2090C180001406CC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A566A5FD2090C180001406CC /* Build configuration list for PBXNativeTarget "BLESerialPortTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A566A5FE2090C180001406CC /* Debug */,
-				A566A5FF2090C180001406CC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A566A6002090C180001406CC /* Build configuration list for PBXNativeTarget "BLESerialPortUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A566A6012090C180001406CC /* Debug */,
-				A566A6022090C180001406CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

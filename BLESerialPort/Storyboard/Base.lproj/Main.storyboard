@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="BLESerialPort" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="BLESerialPort" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About BLESerialPort" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="M1n-al-6S4" kind="show" id="73O-KX-n6u"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                                        <menuItem title="Quit BLESerialPort" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Tools" id="66h-9c-255">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Tools" systemMenu="font" id="4Hx-sD-1iJ">
+                                    <items>
+                                        <menuItem title="Send" keyEquivalent="s" id="heh-r4-Sdl">
+                                            <connections>
+                                                <action selector="sendMenuItemSelected:" target="Ady-hI-5gd" id="Or1-yq-4ya"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Auto" id="Iaq-Tg-Rco">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showConditionalWindow:" target="Ady-hI-5gd" id="swP-6d-kHD"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BLESerialPort" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--PreferenceWindow-->
+        <scene sceneID="kfH-Gi-eTA">
+            <objects>
+                <controllerPlaceholder storyboardName="Preference" referencedIdentifier="PreferenceWindow" id="M1n-al-6S4" sceneMemberID="viewController"/>
+                <customObject id="3gv-gx-D6E" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="458" y="-39"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minFullScreenContentSize" type="size" width="480" height="270"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61" y="352"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="BLESerialPort" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="326"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nt-y1-Peo">
+                                <rect key="frame" x="5" y="173" width="470" height="143"/>
+                                <clipView key="contentView" id="0us-h6-cdS">
+                                    <rect key="frame" x="1" y="1" width="468" height="141"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView editable="NO" selectable="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="w13-zE-qxW">
+                                            <rect key="frame" x="0.0" y="-1" width="468" height="141"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="468" height="141"/>
+                                            <size key="maxSize" width="470" height="10000000"/>
+                                            <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="9bD-HK-Nz2">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="bR0-zj-Q0A">
+                                    <rect key="frame" x="453" y="1" width="16" height="141"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLd-Wt-Tnu">
+                                <rect key="frame" x="5" y="10" width="470" height="143"/>
+                                <clipView key="contentView" id="g1W-sv-KOA">
+                                    <rect key="frame" x="1" y="1" width="468" height="141"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1bc-dL-iaR">
+                                            <rect key="frame" x="0.0" y="-1" width="468" height="141"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="468" height="141"/>
+                                            <size key="maxSize" width="470" height="10000000"/>
+                                            <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="oOz-mD-SuJ">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="05o-1q-wtT">
+                                    <rect key="frame" x="453" y="1" width="16" height="141"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="JLd-Wt-Tnu" secondAttribute="bottom" constant="10" id="6ep-xf-1xL"/>
+                            <constraint firstAttribute="trailing" secondItem="7Nt-y1-Peo" secondAttribute="trailing" constant="5" id="8pe-uY-alt"/>
+                            <constraint firstItem="7Nt-y1-Peo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="5" id="9eL-fw-8F4"/>
+                            <constraint firstItem="7Nt-y1-Peo" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="AKp-lr-nn1"/>
+                            <constraint firstItem="JLd-Wt-Tnu" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="5" id="Ghy-JN-g5i"/>
+                            <constraint firstItem="JLd-Wt-Tnu" firstAttribute="top" secondItem="7Nt-y1-Peo" secondAttribute="bottom" constant="20" id="agi-rY-adi"/>
+                            <constraint firstAttribute="trailing" secondItem="JLd-Wt-Tnu" secondAttribute="trailing" constant="5" id="o2v-rQ-gAv"/>
+                            <constraint firstItem="7Nt-y1-Peo" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" multiplier="0.5" constant="-20" id="oMR-mj-R9F"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputTextView" destination="1bc-dL-iaR" id="64f-l8-ZNS"/>
+                        <outlet property="outputTextView" destination="w13-zE-qxW" id="DiD-vO-i0u"/>
+                    </connections>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="729"/>
+        </scene>
+    </scenes>
+</document>

@@ -58,8 +58,9 @@ final class Logger {
                            fileName: String = #file,
                            line: Int = #line,
                            funcName: String = #function) {
-        
+        #if DEBUG
             print("\(dateFormatter.string(from: Date())) \(event.rawValue)[\(sourceFileName(filePath: fileName))]:\(line) \(funcName) -> \(message)")
+        #endif
     }
     
     private class func sourceFileName(filePath: String) -> String {
