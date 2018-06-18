@@ -58,6 +58,28 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    @IBAction func bleStartButtonClick(_ sender: NSButton) {
+        guard let peripheral = peripheralManager else {
+            sender.state = NSControl.StateValue.off
+            return
+        }
+        
+        switch sender.state {
+        case NSControl.StateValue.off:
+            peripheral.stopAdvertising()
+        case NSControl.StateValue.on:
+            if peripheral.state == CBManagerState.poweredOn {
+                peripheral.publishService()
+            } else {
+                sender.state = NSControl.StateValue.off
+                // 此处需设置提示窗口提示用户开启设备蓝牙
+                openAlertPanel(infoTest: "蓝牙未开启！请开启蓝牙")
+            }
+
+        default: break
+        }
+    }
+    
 }
 
 extension ViewController {
@@ -69,12 +91,12 @@ extension ViewController {
     @IBAction func sendMenuItemSelected(_ sender: Any) {
         Logger.info("\(sender)")
         guard let selectString = self.inputTextView.stringForSelectLine() else {
-            openAlertPanel()
+            openAlertPanel(infoTest: "请选择发送行")
             return
         }
         
         guard checkString(str: selectString) else {
-            openAlertPanel()
+            openAlertPanel(infoTest: "当前选择行数据错误")
             return
         }
         
@@ -94,14 +116,14 @@ extension ViewController {
 //        self.presentViewControllerAsSheet(ConditionalController())
     }
     
-    func openAlertPanel() {
+    func openAlertPanel(infoTest: String) {
         let alert = NSAlert()
 
         alert.addButton(withTitle: "Cancel")
         alert.messageText = "错误"
-        alert.informativeText = "发送数据错误"
+        alert.informativeText = infoTest
         alert.alertStyle = NSAlert.Style.critical
-        alert.runModal
+        alert.runModal()
     }
 }
 

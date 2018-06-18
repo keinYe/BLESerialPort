@@ -19,6 +19,7 @@ class BLEPeripheral: NSObject {
     var writeCharacteristicUUID = "FFF2";
     var notiyCharacteristicUUID =  "FFF3";
     var isAdvertising = false
+    private(set) var state = CBManagerState.poweredOff
     
     fileprivate var reciveData : ReciveData?
     fileprivate var notiyCharacteristic: CBMutableCharacteristic?
@@ -61,6 +62,7 @@ class BLEPeripheral: NSObject {
         guard isAdvertising else {
             return
         }
+        peripheralManager.removeAllServices()
         peripheralManager.stopAdvertising()
         isAdvertising = false
     }
@@ -70,13 +72,7 @@ class BLEPeripheral: NSObject {
 extension BLEPeripheral: CBPeripheralManagerDelegate {
     internal func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         Logger.info("\(peripheral)")
-        
-        switch peripheral.state {
-        case .poweredOn:
-            publishService()
-        default:
-            break
-        }
+        self.state = peripheral.state
     }
     
     internal func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
