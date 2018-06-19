@@ -125,6 +125,9 @@ class LineNumberRulerView: NSRulerView {
     
     init(textView: NSTextView) {
         super.init(scrollView: textView.enclosingScrollView!, orientation: NSRulerView.Orientation.verticalRuler)
+        
+        let font = NSFont(name: "Menlo", size: 12)
+        textView.font = font
         self.font = textView.font ?? NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
         self.clientView = textView
         
@@ -142,12 +145,13 @@ class LineNumberRulerView: NSRulerView {
             if let layoutManager = textView.layoutManager {
                 
                 let relativePoint = self.convert(NSZeroPoint, from: textView)
+                Logger.info("\(relativePoint)")
                 let lineNumberAttributes = [NSAttributedStringKey.font: textView.font!, NSAttributedStringKey.foregroundColor: NSColor.gray] as [NSAttributedStringKey : Any]
 
                 let drawLineNumber = { (lineNumberString:String, y:CGFloat) -> Void in
                     let attString = NSAttributedString(string: lineNumberString, attributes: lineNumberAttributes)
                     let x = 35 - attString.size().width
-                    attString.draw(at: NSPoint(x: x, y: relativePoint.y + y))
+                    attString.draw(at: NSPoint(x: x, y: /*relativePoint.y*/ -4 + y))
                 }
                 
                 let visibleGlyphRange = layoutManager.glyphRange(forBoundingRect: textView.visibleRect, in: textView.textContainer!)

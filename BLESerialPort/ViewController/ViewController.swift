@@ -23,12 +23,12 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
         inputTextView.delegate = self
         inputTextView.lnv_setUpLineNumberView()
         outputTextView.lnv_setUpLineNumberView()
         inputTextView.string = inputText.str
-        //outputTextView.layoutManager?.allowsNonContiguousLayout = false
     }
     
     override func viewDidAppear() {
@@ -36,7 +36,7 @@ class ViewController: NSViewController {
         Logger.info("DidAppear")
         peripheralManager = BLEPeripheral()
         peripheralManager?.registerReciveData(call: {uuid, data in
-            self.outputTextView.string += hexToString(hex: data) + "\n"
+            self.outputTextView.string += "[\(getNowTime())] " + hexToString(hex: data) + "\n"
             self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
             if let inputLine = self.inputText.getLineNumber(form: hexToString(hex: data)) {
                 if let outputLine = self.cycleData.getSendLine(form: "\(inputLine + 1)") {
@@ -172,6 +172,7 @@ extension ViewController: NSTextViewDelegate {
         if (inputText.str != inputTextView.string) {
             inputText.str = inputTextView.string
         }
+        //inputTextView.textStorage?.font = NSFont(name: "Lucida Sans", size: 11)
     }
 }
 
