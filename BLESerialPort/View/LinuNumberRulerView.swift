@@ -29,6 +29,7 @@ import ObjectiveC
 
 var LineNumberViewAssocObjKey: UInt8 = 0
 
+
 extension NSTextView {
     var lineNumberView:LineNumberRulerView {
         get {
@@ -39,11 +40,13 @@ extension NSTextView {
         }
     }
     
+    
+    
     func appendColorString(str: String, color : NSColor?) {
         let attrString: NSMutableAttributedString = NSMutableAttributedString()
         attrString.append(self.attributedString())
         
-        let attrs = [NSAttributedStringKey.font : self.font ?? NSFont(name: "Menlo", size: 12), NSAttributedStringKey.foregroundColor: color ?? NSColor.black] as [NSAttributedStringKey : Any]
+        let attrs = [NSAttributedStringKey.font : self.font ?? NSFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: color ?? NSColor.black] as [NSAttributedStringKey : Any]
         let appendString = NSMutableAttributedString(string: str, attributes: attrs)
         
         attrString.append(appendString)
@@ -85,31 +88,9 @@ extension NSTextView {
         guard lineNumber > 0 else {
             return nil
         }
-        let newLineRegex = try! NSRegularExpression(pattern: "\n", options: [])
-        let visibleGlyphRange = self.layoutManager?.glyphRange(forBoundingRect: self.visibleRect, in: self.textContainer!)
-        
-        let stringMatch = newLineRegex.matches(in: self.string, options: [], range: visibleGlyphRange!)
-        let lineNumber = lineNumber - 1
-        if lineNumber > stringMatch.count {
-            return nil
-        }
-        var range : NSRange = NSRange.init(location: 0, length: 0)
-        if lineNumber == stringMatch.count {
-            range = stringMatch.last?.range ?? range
-        } else {
-            for (index, value) in stringMatch.enumerated() {
-                Logger.info("\(index) \(value)")
-                if index == lineNumber {
-                    range = value.range
-                    range.location = range.location - 1
-                    break
-                }
-            }
-        }
-        let text:NSString = self.string as NSString
-        let v = text.lineRange(for: NSRange(location: range.location + range.length, length: 0))
-        let x = text.substring(with: v)
-        return x
+        let splitedArrary = self.string.components(separatedBy: "\n").map{$0.trimmingCharacters(in: .whitespaces)}
+        let number = lineNumber - 1
+        return splitedArrary[number]
     }
     
     func stringForSelectLine() -> String? {
@@ -163,7 +144,7 @@ class LineNumberRulerView: NSRulerView {
                 let drawLineNumber = { (lineNumberString:String, y:CGFloat) -> Void in
                     let attString = NSAttributedString(string: lineNumberString, attributes: lineNumberAttributes)
                     let x = 35 - attString.size().width
-                    attString.draw(at: NSPoint(x: x, y: /*relativePoint.y*/ -4 + y))
+                    attString.draw(at: NSPoint(x: x, y: relativePoint.y - 4 + y))
                 }
                 
                 let visibleGlyphRange = layoutManager.glyphRange(forBoundingRect: textView.visibleRect, in: textView.textContainer!)

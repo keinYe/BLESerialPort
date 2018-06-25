@@ -38,13 +38,13 @@ class ViewController: NSViewController {
         peripheralManager = BLEPeripheral()
         peripheralManager?.registerReciveData(call: {uuid, data in
             let reciveDataString = "[\(getNowTime())] " + "Rx: " +  hexToString(hex: data) + "\n"
-            self.outputTextView.appendColorString(str: reciveDataString, color: NSColor.red)
+            self.outputTextView.appendColorString(str: reciveDataString, color: NSColor.blue)
             self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
             if let inputLine = self.inputText.getLineNumber(form: hexToString(hex: data)) {
                 if let outputLine = self.cycleData.getSendLine(form: "\(inputLine + 1)") {
                     if let outputString = self.inputTextView.stringForLineNumber(lineNumber: outputLine) {
-                        let sendString = "[\(getNowTime())] " + "Tx: " +  outputString
-                        self.outputTextView.appendColorString(str: sendString, color: NSColor.blue)
+                        let sendString = "[\(getNowTime())] " + "Tx: " +  outputString + "\n"
+                        self.outputTextView.appendColorString(str: sendString, color: NSColor.red)
                         self.peripheralManager?.sendData(data: stringToHexArray(str: outputString))
                     }
                 }
@@ -85,7 +85,6 @@ class ViewController: NSViewController {
 
 extension ViewController {
     @IBAction func sendMenuItemSelected(_ sender: Any) {
-        Logger.info("\(sender)")
         guard let selectString = self.inputTextView.stringForSelectLine() else {
             openAlertPanel(infoTest: "请选择发送行")
             return
@@ -97,6 +96,7 @@ extension ViewController {
         }
         
         Logger.info(selectString)
+        self.outputTextView.appendColorString(str: "[\(getNowTime())] " + "Tx: " + selectString + "\n", color: NSColor.red)
         let data = stringToHexArray(str: selectString)
         peripheralManager?.sendData(data: data)
     }
@@ -169,10 +169,10 @@ extension ViewController: NSTextViewDelegate {
     
     func textViewDidChangeSelection(_ notification: Notification) {
         // 当前光标所选内容发生改变
-        Logger.info("\(notification)")
         if (inputText.str != inputTextView.string) {
             inputText.str = inputTextView.string
         }
+        Logger.info(inputTextView.string)
         //inputTextView.textStorage?.font = NSFont(name: "Lucida Sans", size: 11)
     }
     
