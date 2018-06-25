@@ -17,6 +17,7 @@ class ViewController: NSViewController {
     @IBOutlet var outputTextView: NSTextView!
     @IBOutlet var inputTextView: NSTextView!
     
+    var lineColor = [String : NSColor]()
     var prefs = Preferencs()
     var inputText = InputText()
     var cycleData = CycleSend()
@@ -36,18 +37,18 @@ class ViewController: NSViewController {
         Logger.info("DidAppear")
         peripheralManager = BLEPeripheral()
         peripheralManager?.registerReciveData(call: {uuid, data in
-            self.outputTextView.string += "[\(getNowTime())] " + hexToString(hex: data) + "\n"
+            let reciveDataString = "[\(getNowTime())] " + "Rx: " +  hexToString(hex: data) + "\n"
+            self.outputTextView.appendColorString(str: reciveDataString, color: NSColor.red)
             self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
             if let inputLine = self.inputText.getLineNumber(form: hexToString(hex: data)) {
                 if let outputLine = self.cycleData.getSendLine(form: "\(inputLine + 1)") {
                     if let outputString = self.inputTextView.stringForLineNumber(lineNumber: outputLine) {
-                        Logger.info(outputString)
+                        let sendString = "[\(getNowTime())] " + "Tx: " +  outputString
+                        self.outputTextView.appendColorString(str: sendString, color: NSColor.blue)
                         self.peripheralManager?.sendData(data: stringToHexArray(str: outputString))
                     }
                 }
             }
-
-            
         })
         setupPrefs()
         //_ = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(ViewController.sendData) , userInfo: nil, repeats: true)
@@ -83,11 +84,6 @@ class ViewController: NSViewController {
 }
 
 extension ViewController {
-    @objc func sendData(t:Timer)->Bool{
-        peripheralManager?.sendData(data: [1, 2, 3])
-        return true
-    }
-    
     @IBAction func sendMenuItemSelected(_ sender: Any) {
         Logger.info("\(sender)")
         guard let selectString = self.inputTextView.stringForSelectLine() else {
@@ -124,6 +120,11 @@ extension ViewController {
         alert.informativeText = infoTest
         alert.alertStyle = NSAlert.Style.critical
         alert.runModal()
+    }
+    
+    func setLineColor(textView: NSTextView, start: Int, offset: Int, color: NSColor) {
+        let range = NSRange.init(location: start, length: offset)
+        textView.textStorage?.addAttribute(.foregroundColor, value: color, range: range)
     }
 }
 
@@ -173,6 +174,12 @@ extension ViewController: NSTextViewDelegate {
             inputText.str = inputTextView.string
         }
         //inputTextView.textStorage?.font = NSFont(name: "Lucida Sans", size: 11)
+    }
+    
+    func textView(_ textView: NSTextView, completions words: [String], forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>?) -> [String] {
+        Logger.info("\(words)")
+        Logger.info("\(charRange)")
+        return []
     }
 }
 

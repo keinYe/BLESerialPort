@@ -39,6 +39,19 @@ extension NSTextView {
         }
     }
     
+    func appendColorString(str: String, color : NSColor?) {
+        let attrString: NSMutableAttributedString = NSMutableAttributedString()
+        attrString.append(self.attributedString())
+        
+        let attrs = [NSAttributedStringKey.font : self.font ?? NSFont(name: "Menlo", size: 12), NSAttributedStringKey.foregroundColor: color ?? NSColor.black] as [NSAttributedStringKey : Any]
+        let appendString = NSMutableAttributedString(string: str, attributes: attrs)
+        
+        attrString.append(appendString)
+        
+        self.textStorage?.setAttributedString(attrString)
+        self.lnv_setUpLineNumberView()
+    }
+    
     func lnv_setUpLineNumberView() {
         if font == nil {
             font = NSFont.systemFont(ofSize: 16)
@@ -145,7 +158,6 @@ class LineNumberRulerView: NSRulerView {
             if let layoutManager = textView.layoutManager {
                 
                 let relativePoint = self.convert(NSZeroPoint, from: textView)
-                Logger.info("\(relativePoint)")
                 let lineNumberAttributes = [NSAttributedStringKey.font: textView.font!, NSAttributedStringKey.foregroundColor: NSColor.gray] as [NSAttributedStringKey : Any]
 
                 let drawLineNumber = { (lineNumberString:String, y:CGFloat) -> Void in
