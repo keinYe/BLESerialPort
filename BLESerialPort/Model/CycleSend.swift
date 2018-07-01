@@ -8,70 +8,30 @@
 
 import Foundation
 
-class CycleData:NSObject, NSCoding{
-
-    @objc dynamic var number : String = ""
-    @objc dynamic var input : String = ""
-    @objc dynamic var output : String = ""
-    
-    convenience init(number: String, input: String, output: String) {
-        self.init()
-        self.number = number
-        self.input = input
-        self.output = output
-    }
-    
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(number, forKey: "number")
-        aCoder.encode(input, forKey: "input")
-        aCoder.encode(output, forKey: "output")
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        self.init()
-        if let number = aDecoder.decodeObject(forKey: "number") {
-            self.number = number as! String
-        }
-        if let input = aDecoder.decodeObject(forKey: "input") {
-            self.input = input as! String
-        }
-        if let output = aDecoder.decodeObject(forKey: "output") {
-            self.output = output as! String
-        }
-    }
-}
-
 struct CycleSend {
-    var data:[CycleData] {
-        get {
-            if let savedValue = UserDefaults().data(forKey: "cycle_send_data") {
-                if let value = NSKeyedUnarchiver.unarchiveObject(with: savedValue) {
-                    return value as! [CycleData]
-                }
-            }
-            return cread()
+    var data:[NSMutableDictionary] {
+        if let saveValue = UserDefaults.CycleSend.arrary(forKey: .cycleSend) {
+            return saveValue as! [NSMutableDictionary]
         }
-        
-        set {
-            let saveData = NSKeyedArchiver.archivedData(withRootObject: newValue)
-            UserDefaults().set(saveData, forKey: "cycle_send_data")
-        }
+        return cread()
     }
     
-    private func cread() -> [CycleData] {
-        var data = [CycleData]()
-        for i in 1 ... 20 {
-            data.append(CycleData.init(number: "\(i)", input: "", output: ""))
+    private func cread() -> [NSMutableDictionary] {
+        var dir:[String:String] = ["number":"1", "input": "", "output":""]
+        var arrary = [NSMutableDictionary]()
+        for number in 1...20 {
+            dir["number"] = "\(number)"
+            arrary.append(NSMutableDictionary(dictionary: dir))
         }
-        return data
+        UserDefaults.CycleSend.set(value: arrary, forKey: .cycleSend)
+        return arrary
     }
     
     func getSendLine(form inputLine: String) -> Int? {
         for tmpData in data {
-            Logger.info(tmpData.input + "  " + inputLine)
-            if tmpData.input == inputLine {
-                Logger.info(tmpData.output)
-                return Int(tmpData.output)
+            Logger.info("\(String(describing: tmpData["input"]))" + "  " + inputLine)
+            if "\(String(describing: tmpData["input"]))" == inputLine {
+                return Int(String(describing: tmpData["output"]))
             }
         }
         return nil

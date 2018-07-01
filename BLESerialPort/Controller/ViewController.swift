@@ -98,18 +98,6 @@ extension ViewController {
         peripheralManager?.sendData(data: data)
     }
     
-    @IBAction func showConditionalWindow(_ sender: Any) {
-        (sender as! NSMenuItem).state = .on
-        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Auto"), bundle: nil)
-        let conditionalController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "CycleSendWindow")) as! NSWindowController
-        if let window = conditionalController.window {
-            let application = NSApplication.shared
-            application.runModal(for: window)
-            window.close()
-        }
-//        self.presentViewControllerAsSheet(ConditionalController())
-    }
-    
     func openAlertPanel(infoTest: String) {
         let alert = NSAlert()
 

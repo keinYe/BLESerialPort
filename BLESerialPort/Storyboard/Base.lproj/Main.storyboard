@@ -48,9 +48,6 @@
                                         </menuItem>
                                         <menuItem title="Auto" id="Iaq-Tg-Rco">
                                             <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="showConditionalWindow:" target="Ady-hI-5gd" id="swP-6d-kHD"/>
-                                            </connections>
                                         </menuItem>
                                     </items>
                                 </menu>

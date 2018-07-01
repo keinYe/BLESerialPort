@@ -32,13 +32,7 @@ class PreferenceWindowController: NSWindowController {
         self.switchView(item)
         self.window?.center()
         
-        var dir:[String:String] = ["number":"1", "input": "", "output":""]
-        var arrary = [NSMutableDictionary]()
-        for number in 1...20 {
-            dir["number"] = "\(number)"
-            arrary.append(NSMutableDictionary(dictionary: dir))
-        }
-        UserDefaults.CycleSend.set(value: arrary, forKey: .cycleSend)
+        let _ = CycleSend().data
     }
     
     @IBAction func switchView(_ toolbarItem: NSToolbarItem) {
