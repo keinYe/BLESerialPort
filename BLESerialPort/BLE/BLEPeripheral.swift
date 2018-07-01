@@ -14,10 +14,18 @@ typealias ReciveData = (String, [UInt8]) -> Void
 class BLEPeripheral: NSObject {
     fileprivate var peripheralManager: CBPeripheralManager
     let localNameKey =  "BabyBluetoothStubOnOSX";
-    var ServiceUUID =  "FFF0";
-    var readCharacteristicUUID = "FFF1";
-    var writeCharacteristicUUID = "FFF2";
-    var notiyCharacteristicUUID =  "FFF3";
+    fileprivate var ServiceUUID: String {
+        return UserDefaults.General.string(forKey: .serviceUUID) ?? "FFF0"
+    }
+    fileprivate var readCharacteristicUUID: String {
+        return UserDefaults.General.string(forKey: .readUUID) ?? "FFF1"
+    }
+    fileprivate var writeCharacteristicUUID:String {
+        return UserDefaults.General.string(forKey: .writeUUID) ?? "FFF2"
+    }
+    fileprivate var notiyCharacteristicUUID: String {
+        return UserDefaults.General.string(forKey: .notifyUUID) ?? "FFF3"
+    }
     var isAdvertising = false
     private(set) var state = CBManagerState.poweredOff
     

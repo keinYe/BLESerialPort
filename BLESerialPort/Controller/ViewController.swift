@@ -18,7 +18,6 @@ class ViewController: NSViewController {
     @IBOutlet var inputTextView: NSTextView!
     
     var lineColor = [String : NSColor]()
-    var prefs = Preferencs()
     var inputText = InputText()
     var cycleData = CycleSend()
     
@@ -50,7 +49,6 @@ class ViewController: NSViewController {
                 }
             }
         })
-        setupPrefs()
         //_ = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(ViewController.sendData) , userInfo: nil, repeats: true)
     }
 
@@ -64,7 +62,6 @@ class ViewController: NSViewController {
             sender.state = NSControl.StateValue.off
             return
         }
-        
         switch sender.state {
         case NSControl.StateValue.off:
             peripheral.stopAdvertising()
@@ -102,6 +99,7 @@ extension ViewController {
     }
     
     @IBAction func showConditionalWindow(_ sender: Any) {
+        (sender as! NSMenuItem).state = .on
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Auto"), bundle: nil)
         let conditionalController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "CycleSendWindow")) as! NSWindowController
         if let window = conditionalController.window {
@@ -128,31 +126,6 @@ extension ViewController {
     }
 }
 
-extension ViewController {
-    func setupPrefs() {
-        updateFormPrefs()
-        let notificationName = Notification.Name(rawValue: "PrefsChanged")
-        NotificationCenter.default.addObserver(forName: notificationName,
-                                               object: nil, queue: nil) {
-                                                (notification) in
-                                                self.updateFormPrefs()
-        }
-
-    }
-    
-    func updateFormPrefs() {
-        // Set BLE UUID
-        peripheralManager?.ServiceUUID = prefs.serviceUUID
-        //peripheralManager?.notiyCharacteristicUUID = prefs.characUUID
-        // Restart BLE advertising
-        
-        Logger.info("\(String(describing: peripheralManager?.isAdvertising))")
-        if (peripheralManager?.isAdvertising)! {
-            peripheralManager?.stopAdvertising()
-            peripheralManager?.publishService()
-        }
-    }
-}
 
 extension ViewController: NSTextViewDelegate {
     func textView(_ textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
