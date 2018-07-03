@@ -13,7 +13,7 @@ class PreferenceWindowController: NSWindowController {
 
     private let viewControllers : [NSViewController] = [
         "GeneralPanel",
-        "CycleSendPanel",
+        "TriggerPanel",
     ]
     .map { NSStoryboard.Name($0) }
     .map { NSStoryboard(name: $0, bundle: nil).instantiateInitialController() as! NSViewController }
@@ -29,10 +29,9 @@ class PreferenceWindowController: NSWindowController {
             Logger.info("error")
             return
         }
+        self.window?.toolbar?.selectedItemIdentifier = item.itemIdentifier
         self.switchView(item)
         self.window?.center()
-        
-        let _ = CycleSend().data
     }
     
     @IBAction func switchView(_ toolbarItem: NSToolbarItem) {

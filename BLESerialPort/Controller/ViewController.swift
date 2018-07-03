@@ -19,7 +19,7 @@ class ViewController: NSViewController {
     
     var lineColor = [String : NSColor]()
     var inputText = InputText()
-    var cycleData = CycleSend()
+    var trigger = Trigger()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +39,12 @@ class ViewController: NSViewController {
             let reciveDataString = "[\(getNowTime())] " + "Rx: " +  hexToString(hex: data) + "\n"
             self.outputTextView.appendColorString(str: reciveDataString, color: NSColor.blue)
             self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
+            
+            guard self.trigger.enable else{
+                return
+            }
             if let inputLine = self.inputText.getLineNumber(form: hexToString(hex: data)) {
-                if let outputLine = self.cycleData.getSendLine(form: "\(inputLine + 1)") {
-                    if let outputString = self.inputTextView.stringForLineNumber(lineNumber: outputLine) {
-                        let sendString = "[\(getNowTime())] " + "Tx: " +  outputString + "\n"
-                        self.outputTextView.appendColorString(str: sendString, color: NSColor.red)
-                        self.peripheralManager?.sendData(data: stringToHexArray(str: outputString))
-                    }
-                }
+                let _ = Timer.scheduledTimer(timeInterval: self.trigger.delay, target: self, selector: #selector(self.delaySendLine), userInfo: inputLine, repeats: false)
             }
         })
         //_ = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(ViewController.sendData) , userInfo: nil, repeats: true)
@@ -75,6 +73,21 @@ class ViewController: NSViewController {
             }
 
         default: break
+        }
+    }
+    
+    @objc private func delaySendLine(timer:Timer) {
+        guard let line = timer.userInfo as? Int else {
+            return
+        }
+        if let outputLine = self.trigger.getSendLine(form: "\(line + 1)") {
+             Logger.info("\(outputLine)")
+            if let outputString = self.inputTextView.stringForLineNumber(lineNumber: outputLine) {
+                Logger.info("\(outputString)")
+                let sendString = "[\(getNowTime())] " + "Tx: " +  outputString + "\n"
+                self.outputTextView.appendColorString(str: sendString, color: NSColor.red)
+                self.peripheralManager?.sendData(data: stringToHexArray(str: outputString))
+            }
         }
     }
     

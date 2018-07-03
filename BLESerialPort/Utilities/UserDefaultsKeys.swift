@@ -18,11 +18,18 @@ extension UserDefaults {
             case notifyUUID
         }
     }
-    struct CycleSend:UserDefaultsSettable {
+    struct Trigger:UserDefaultsSettable {
         enum defaultKeys:String {
-            case cycleSend
+            case trigger
+            case triggerDelay
+            case triggerEnable
         }
     }
+//    struct CycleSend:UserDefaultsSettable {
+//        enum defaultKeys:String {
+//            case cycleSend
+//        }
+//    }
 }
 
 
@@ -47,5 +54,25 @@ extension UserDefaultsSettable where defaultKeys.RawValue==String {
     static func arrary(forKey key: defaultKeys) -> [Any]? {
         let aKey = key.rawValue
         return UserDefaults.standard.array(forKey: aKey)
+    }
+    
+    static func set(value: Int?, forKey key: defaultKeys) {
+        let aKey = key.rawValue
+        UserDefaults.standard.set(value, forKey: aKey)
+    }
+    
+    static func integer(forKey key: defaultKeys) -> Int? {
+        let aKey = key.rawValue
+        return UserDefaults.standard.integer(forKey: aKey)
+    }
+    
+    static func set(value: Bool, forKey key: defaultKeys) {
+        let aKey = key.rawValue
+        UserDefaults.standard.set(value, forKey: aKey)
+    }
+    
+    static func bool(forKey key: defaultKeys) -> Bool {
+        let aKey = key.rawValue
+        return UserDefaults.standard.bool(forKey: aKey)
     }
 }
