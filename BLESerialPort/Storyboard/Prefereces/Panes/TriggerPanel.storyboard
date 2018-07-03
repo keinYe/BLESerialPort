@@ -228,6 +228,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="triggerEnableClick:" target="tRC-oL-LaM" id="SsQ-9Y-R1k"/>
+                                    <binding destination="3an-es-VXf" name="value" keyPath="values.triggerEnable" id="lp5-EI-p3e"/>
                                 </connections>
                             </button>
                         </subviews>

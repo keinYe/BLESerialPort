@@ -25,11 +25,6 @@ extension UserDefaults {
             case triggerEnable
         }
     }
-//    struct CycleSend:UserDefaultsSettable {
-//        enum defaultKeys:String {
-//            case cycleSend
-//        }
-//    }
 }
 
 
@@ -54,6 +49,11 @@ extension UserDefaultsSettable where defaultKeys.RawValue==String {
     static func arrary(forKey key: defaultKeys) -> [Any]? {
         let aKey = key.rawValue
         return UserDefaults.standard.array(forKey: aKey)
+    }
+    
+    static func object(forKey key: defaultKeys) -> Any? {
+        let aKey = key.rawValue
+        return UserDefaults.standard.object(forKey: aKey)
     }
     
     static func set(value: Int?, forKey key: defaultKeys) {

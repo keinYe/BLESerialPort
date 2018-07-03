@@ -46,8 +46,12 @@
                                                 <action selector="sendMenuItemSelected:" target="Ady-hI-5gd" id="Or1-yq-4ya"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Auto" id="Iaq-Tg-Rco">
+                                        <menuItem title="Trigger Send" id="Iaq-Tg-Rco">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="triggerMenuEnableClick:" target="Ady-hI-5gd" id="Oxq-6T-2VE"/>
+                                                <binding destination="ARF-1R-cTo" name="value" keyPath="values.triggerEnable" id="SRA-ZV-ebb"/>
+                                            </connections>
                                         </menuItem>
                                     </items>
                                 </menu>
@@ -61,6 +65,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BLESerialPort" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="ARF-1R-cTo"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>

@@ -20,16 +20,20 @@ class TriggerPanelController: NSViewController {
     
     
     @IBAction func triggerEnableClick(_ sender: Any) {
-        Logger.info("\(sender)")
         guard let check = sender as? NSButton else {
             return
         }
-        Logger.info("\(check.state)")
         if check.state == .on {
             UserDefaults.Trigger.set(value: arraryController.arrangedObjects as? [NSMutableDictionary], forKey: .trigger)
-            trigger.enable = true
-        } else {
-            trigger.enable = false
+        }
+    }
+    
+    @IBAction func triggerMenuEnableClick(_ sender: Any) {
+        guard let menu = sender as? NSMenuItem else {
+            return
+        }
+        if menu.state == .on {
+             UserDefaults.Trigger.set(value: arraryController.arrangedObjects as? [NSMutableDictionary], forKey: .trigger)
         }
     }
     
