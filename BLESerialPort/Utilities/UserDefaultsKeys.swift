@@ -25,6 +25,17 @@ extension UserDefaults {
             case triggerEnable
         }
     }
+    struct Cycle:UserDefaultsSettable {
+        enum defaultKeys:String {
+            case enableLine
+            case enableCurrentLine
+            case setLine
+            case rangeStartLine
+            case rangeEndLine
+            case cycleDelay
+            case cycleEnable
+        }
+    }
 }
 
 

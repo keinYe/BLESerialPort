@@ -25,6 +25,9 @@
 		A566A5DC2090C180001406CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A566A5DB2090C180001406CC /* Assets.xcassets */; };
 		A566A5DF2090C180001406CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A566A5DD2090C180001406CC /* Main.storyboard */; };
 		A566A60420921115001406CC /* BLEPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A60320921115001406CC /* BLEPeripheral.swift */; };
+		A586031F20ED0AB900DB15B9 /* CyclePanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A586031E20ED0AB900DB15B9 /* CyclePanel.storyboard */; };
+		A586032120ED0ACD00DB15B9 /* CyclePanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A586032020ED0ACD00DB15B9 /* CyclePanelController.swift */; };
+		A586032320ED114000DB15B9 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A586032220ED114000DB15B9 /* Cycle.swift */; };
 		A5E78F0E20E5948F00F03863 /* PreferenceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E78F0C20E5948F00F03863 /* PreferenceWindowController.swift */; };
 		A5E78F0F20E5948F00F03863 /* PreferenceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E78F0D20E5948F00F03863 /* PreferenceWindow.xib */; };
 		A5E78F1720E5987000F03863 /* GeneralPanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E78F1620E5987000F03863 /* GeneralPanel.storyboard */; };
@@ -74,6 +77,9 @@
 		A566A5E02090C180001406CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A566A5E12090C180001406CC /* BLESerialPort.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BLESerialPort.entitlements; sourceTree = "<group>"; };
 		A566A60320921115001406CC /* BLEPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEPeripheral.swift; sourceTree = "<group>"; };
+		A586031E20ED0AB900DB15B9 /* CyclePanel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CyclePanel.storyboard; sourceTree = "<group>"; };
+		A586032020ED0ACD00DB15B9 /* CyclePanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyclePanelController.swift; sourceTree = "<group>"; };
+		A586032220ED114000DB15B9 /* Cycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
 		A5E78F0C20E5948F00F03863 /* PreferenceWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
 		A5E78F0D20E5948F00F03863 /* PreferenceWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceWindow.xib; sourceTree = "<group>"; };
 		A5E78F1620E5987000F03863 /* GeneralPanel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeneralPanel.storyboard; sourceTree = "<group>"; };
@@ -188,6 +194,7 @@
 			children = (
 				A512938A20CAB7F1000DE388 /* Input.swift */,
 				A500E8D320EA669E00515E21 /* Trigger.swift */,
+				A586032220ED114000DB15B9 /* Cycle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +260,7 @@
 		A5E78F1020E597B500F03863 /* Panes */ = {
 			isa = PBXGroup;
 			children = (
+				A586031E20ED0AB900DB15B9 /* CyclePanel.storyboard */,
 				A5E78F1620E5987000F03863 /* GeneralPanel.storyboard */,
 				A5042F3C20E6EAD500F3B106 /* TriggerPanel.storyboard */,
 			);
@@ -262,6 +270,7 @@
 		A5E78F1120E597E500F03863 /* Panes */ = {
 			isa = PBXGroup;
 			children = (
+				A586032020ED0ACD00DB15B9 /* CyclePanelController.swift */,
 				A5E78F1820E59A2500F03863 /* GeneralPaneController.swift */,
 				A5042F4220E6EF0D00F3B106 /* TriggerPanelController.swift */,
 			);
@@ -396,6 +405,7 @@
 			files = (
 				A5042F3D20E6EAD500F3B106 /* TriggerPanel.storyboard in Resources */,
 				A566A5DC2090C180001406CC /* Assets.xcassets in Resources */,
+				A586031F20ED0AB900DB15B9 /* CyclePanel.storyboard in Resources */,
 				A566A5DF2090C180001406CC /* Main.storyboard in Resources */,
 				A5E78F0F20E5948F00F03863 /* PreferenceWindow.xib in Resources */,
 				A5E78F1720E5987000F03863 /* GeneralPanel.storyboard in Resources */,
@@ -429,11 +439,13 @@
 				A543F7D520B309E60002D53C /* dataCon.swift in Sources */,
 				A5042F3B20E6E63B00F3B106 /* UserDefaultsKeys.swift in Sources */,
 				A53499BE20AB15CA0089253B /* LinuNumberRulerView.swift in Sources */,
+				A586032320ED114000DB15B9 /* Cycle.swift in Sources */,
 				A535C79E209688B3001BF2F5 /* Logger.swift in Sources */,
 				A5042F4320E6EF0D00F3B106 /* TriggerPanelController.swift in Sources */,
 				A527F05820E1A0DD001336FE /* LineNumberTextView.swift in Sources */,
 				A566A5D72090C180001406CC /* ViewController.swift in Sources */,
 				A500E8D420EA669E00515E21 /* Trigger.swift in Sources */,
+				A586032120ED0ACD00DB15B9 /* CyclePanelController.swift in Sources */,
 				A566A60420921115001406CC /* BLEPeripheral.swift in Sources */,
 				A566A5D52090C180001406CC /* AppDelegate.swift in Sources */,
 				A5E78F1920E59A2500F03863 /* GeneralPaneController.swift in Sources */,

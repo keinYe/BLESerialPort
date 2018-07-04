@@ -14,6 +14,7 @@ class PreferenceWindowController: NSWindowController {
     private let viewControllers : [NSViewController] = [
         "GeneralPanel",
         "TriggerPanel",
+        "CyclePanel",
     ]
     .map { NSStoryboard.Name($0) }
     .map { NSStoryboard(name: $0, bundle: nil).instantiateInitialController() as! NSViewController }

@@ -28,15 +28,21 @@
                             <action selector="switchView:" target="-2" id="SnK-L1-cPE"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="F562F9CC-4857-4169-BA68-6CF3B459A9BB" label="CycleSend" paletteLabel="CycleSend" tag="1" image="Pre_general" visibilityPriority="1" selectable="YES" id="faE-FQ-pgC">
+                    <toolbarItem implicitItemIdentifier="F562F9CC-4857-4169-BA68-6CF3B459A9BB" label="TriggerSend" paletteLabel="TriggerSend" tag="1" image="Pre_general" visibilityPriority="1" selectable="YES" id="faE-FQ-pgC">
                         <connections>
                             <action selector="switchView:" target="-2" id="LJI-Hg-akl"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="C70BBBEA-FB04-4ED7-B575-704B65125EC0" label="CycleSend" paletteLabel="CycleSend" tag="2" image="Pre_general" visibilityPriority="2" selectable="YES" id="are-VX-OjE">
+                        <connections>
+                            <action selector="switchView:" target="-2" id="8Yj-7D-Whd"/>
                         </connections>
                     </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="1W6-ET-2iP"/>
                     <toolbarItem reference="faE-FQ-pgC"/>
+                    <toolbarItem reference="are-VX-OjE"/>
                 </defaultToolbarItems>
             </toolbar>
             <point key="canvasLocation" x="60" y="100"/>
