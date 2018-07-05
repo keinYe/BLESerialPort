@@ -28,6 +28,7 @@
 		A586031F20ED0AB900DB15B9 /* CyclePanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A586031E20ED0AB900DB15B9 /* CyclePanel.storyboard */; };
 		A586032120ED0ACD00DB15B9 /* CyclePanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A586032020ED0ACD00DB15B9 /* CyclePanelController.swift */; };
 		A586032320ED114000DB15B9 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A586032220ED114000DB15B9 /* Cycle.swift */; };
+		A589075920EED75600FFFCB1 /* CheckDigit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589075820EED75600FFFCB1 /* CheckDigit.swift */; };
 		A5E78F0E20E5948F00F03863 /* PreferenceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E78F0C20E5948F00F03863 /* PreferenceWindowController.swift */; };
 		A5E78F0F20E5948F00F03863 /* PreferenceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E78F0D20E5948F00F03863 /* PreferenceWindow.xib */; };
 		A5E78F1720E5987000F03863 /* GeneralPanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E78F1620E5987000F03863 /* GeneralPanel.storyboard */; };
@@ -80,6 +81,7 @@
 		A586031E20ED0AB900DB15B9 /* CyclePanel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CyclePanel.storyboard; sourceTree = "<group>"; };
 		A586032020ED0ACD00DB15B9 /* CyclePanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyclePanelController.swift; sourceTree = "<group>"; };
 		A586032220ED114000DB15B9 /* Cycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
+		A589075820EED75600FFFCB1 /* CheckDigit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDigit.swift; sourceTree = "<group>"; };
 		A5E78F0C20E5948F00F03863 /* PreferenceWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
 		A5E78F0D20E5948F00F03863 /* PreferenceWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceWindow.xib; sourceTree = "<group>"; };
 		A5E78F1620E5987000F03863 /* GeneralPanel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeneralPanel.storyboard; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				A543F7D420B309E60002D53C /* dataCon.swift */,
 				A5042F3A20E6E63B00F3B106 /* UserDefaultsKeys.swift */,
+				A589075820EED75600FFFCB1 /* CheckDigit.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				A543F7D520B309E60002D53C /* dataCon.swift in Sources */,
 				A5042F3B20E6E63B00F3B106 /* UserDefaultsKeys.swift in Sources */,
 				A53499BE20AB15CA0089253B /* LinuNumberRulerView.swift in Sources */,
+				A589075920EED75600FFFCB1 /* CheckDigit.swift in Sources */,
 				A586032320ED114000DB15B9 /* Cycle.swift in Sources */,
 				A535C79E209688B3001BF2F5 /* Logger.swift in Sources */,
 				A5042F4320E6EF0D00F3B106 /* TriggerPanelController.swift in Sources */,

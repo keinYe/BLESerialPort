@@ -20,6 +20,7 @@ class ViewController: NSViewController {
     var lineColor = [String : NSColor]()
     var inputText = InputText()
     var trigger = Trigger()
+    var cycle = Cycle()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,13 @@ class ViewController: NSViewController {
         Logger.info("DidAppear")
         peripheralManager = BLEPeripheral()
         peripheralManager?.registerReciveData(call: {uuid, data in
-            let reciveDataString = "[\(getNowTime())] " + "Rx: " +  hexToString(hex: data) + "\n"
+            var reciveString = ""
+            reciveString = hexToString(hex: data)
+//            for char in data {
+//                reciveString.append(Character(UnicodeScalar(char)))
+//            }
+            
+            let reciveDataString = "[\(getNowTime())] " + "Rx: " +  reciveString + "\n"
             self.outputTextView.appendColorString(str: reciveDataString, color: NSColor.blue)
             self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
             
@@ -84,13 +91,34 @@ class ViewController: NSViewController {
              Logger.info("\(outputLine)")
             if let outputString = self.inputTextView.stringForLineNumber(lineNumber: outputLine) {
                 Logger.info("\(outputString)")
-                let sendString = "[\(getNowTime())] " + "Tx: " +  outputString + "\n"
-                self.outputTextView.appendColorString(str: sendString, color: NSColor.red)
-                self.peripheralManager?.sendData(data: stringToHexArray(str: outputString))
+                self.sendData(send: outputString)
             }
         }
     }
     
+    @objc private func cycleSendLine(time: Timer) {
+        guard cycle.enable else {
+            time.invalidate()
+            return
+        }
+        var sendString:String?
+        if cycle.enableLine {
+            if cycle.enableCurrentLine {
+                sendString = self.inputTextView.stringForSelectLine()
+            } else {
+                sendString = self.inputTextView.stringForLineNumber(lineNumber: cycle.setLine)
+            }
+        } else {
+            sendString = self.inputTextView.stringForLineNumber(lineNumber: cycle.rangeCurrentLine)
+            cycle.rangeCurrentLineIncrease()
+        }
+        if let send = sendString {
+            sendData(send: send)
+            if cycle.enable {
+                let _ = Timer.scheduledTimer(timeInterval: self.cycle.delay, target: self, selector: #selector(self.cycleSendLine), userInfo: nil, repeats: false)
+            }
+        }
+    }
 }
 
 extension ViewController {
@@ -104,11 +132,10 @@ extension ViewController {
             openAlertPanel(infoTest: "当前选择行数据错误")
             return
         }
-        
-        Logger.info(selectString)
-        self.outputTextView.appendColorString(str: "[\(getNowTime())] " + "Tx: " + selectString + "\n", color: NSColor.red)
-        let data = stringToHexArray(str: selectString)
-        peripheralManager?.sendData(data: data)
+        sendData(send: selectString)
+        if cycle.enable {
+            let _ = Timer.scheduledTimer(timeInterval: self.cycle.delay, target: self, selector: #selector(self.cycleSendLine), userInfo: nil, repeats: false)
+        }
     }
     
     func openAlertPanel(infoTest: String) {
@@ -125,6 +152,12 @@ extension ViewController {
         let range = NSRange.init(location: start, length: offset)
         textView.textStorage?.addAttribute(.foregroundColor, value: color, range: range)
     }
+    
+    func sendData(send: String) {
+        let sendString = "[\(getNowTime())] " + "Tx: " +  send + "\n"
+        self.outputTextView.appendColorString(str: sendString, color: NSColor.red)
+        peripheralManager?.sendData(data: stringToHexArray(str: send))
+    }
 }
 
 
@@ -139,6 +172,7 @@ extension ViewController: NSTextViewDelegate {
     
     func textView(_ textView: NSTextView, clickedOn cell: NSTextAttachmentCellProtocol, in cellFrame: NSRect, at charIndex: Int) {
         Logger.info("\(cell)")
+        
     }
     
     func textViewDidChangeSelection(_ notification: Notification) {

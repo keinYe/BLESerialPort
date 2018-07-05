@@ -57,6 +57,7 @@ struct Cycle {
         }
         set {
             UserDefaults.Cycle.set(value: newValue, forKey: .rangeStartLine)
+            self.rangeCurrentLine = newValue
         }
     }
     var rangeEndLine:Int {
@@ -72,12 +73,24 @@ struct Cycle {
         }
     }
     
+    var rangeCurrentLine:Int = 0
+    mutating func rangeCurrentLineIncrease() {
+        rangeCurrentLine += 1;
+        if rangeCurrentLine > rangeEndLine {
+            rangeCurrentLine = rangeStartLine
+        }
+    }
+    
     var delay:Double {
         if let saveValue = UserDefaults.Cycle.integer(forKey: .cycleDelay) {
             return Double(saveValue) / 1000
         }
         UserDefaults.Cycle.set(value: 10, forKey: .cycleDelay)
         return 0.01
+    }
+    
+    init() {
+        rangeCurrentLine = rangeStartLine 
     }
     
 }

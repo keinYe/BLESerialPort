@@ -29,12 +29,14 @@ class CyclePanelController: NSViewController {
         } else {
             rangeLineStartTextField.isEnabled = true
             rangeLineEndTextField.isEnabled = true
+            rangeLineButton.state = .on
         }
         
         if cycle.enableCurrentLine {
             fiexdLineTextField.isEnabled = false
         } else {
             fiexdLineTextField.isEnabled = true
+            fixedLineButton.state = .on
         }
     }
     

@@ -35,6 +35,12 @@ func checkString(str: String) -> Bool {
     return false
 }
 
+func stringToArrary(str: String) -> [UInt8] {
+    return str.unicodeScalars.map {
+        UInt8($0.value)
+    }
+}
+
 func stringToHexArray(str: String) -> [UInt8] {
     guard checkString(str: str) else {
         return [UInt8]()
