@@ -10,6 +10,14 @@ import Foundation
 
 
 extension UserDefaults {
+    
+    struct DisplaySetting:UserDefaultsSettable {
+        enum defaultKeys:String {
+            case inputASCII
+            case outputASCII
+        }
+    }
+    
     struct General:UserDefaultsSettable {
         enum defaultKeys:String {
             case serviceUUID

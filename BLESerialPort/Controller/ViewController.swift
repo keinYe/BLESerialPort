@@ -21,6 +21,7 @@ class ViewController: NSViewController {
     var inputText = InputText()
     var trigger = Trigger()
     var cycle = Cycle()
+    var displaySetting = DisplaySetting()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +39,14 @@ class ViewController: NSViewController {
         peripheralManager = BLEPeripheral()
         peripheralManager?.registerReciveData(call: {uuid, data in
             var reciveString = ""
-            reciveString = hexToString(hex: data)
-//            for char in data {
-//                reciveString.append(Character(UnicodeScalar(char)))
-//            }
+            if self.displaySetting.outputAsciiMode {
+                for char in data {
+                    reciveString.append(Character(UnicodeScalar(char)))
+                }
+            } else {
+                reciveString = hexToString(hex: data)
+            }
+
             
             let reciveDataString = "[\(getNowTime())] " + "Rx: " +  reciveString + "\n"
             self.outputTextView.appendColorString(str: reciveDataString, color: NSColor.blue)
