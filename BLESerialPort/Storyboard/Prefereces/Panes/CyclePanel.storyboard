@@ -44,7 +44,10 @@
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dKG-j3-2j6">
                                             <rect key="frame" x="174" y="109" width="91" height="22"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" drawsBackground="YES" id="xaC-IP-LQP">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="5Am-n9-wT7"/>
+                                                <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" allowsFloats="NO" usesGroupingSeparator="NO" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="5Am-n9-wT7">
+                                                    <real key="minimum" value="1"/>
+                                                    <real key="maximum" value="999"/>
+                                                </numberFormatter>
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -85,7 +88,10 @@
                                                 <constraint firstAttribute="width" constant="40" id="5Lg-j1-2hQ"/>
                                             </constraints>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="X1B-z5-noa">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="AW8-xp-CNs"/>
+                                                <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" generatesDecimalNumbers="YES" allowsFloats="NO" usesGroupingSeparator="NO" lenient="YES" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="AW8-xp-CNs">
+                                                    <real key="minimum" value="1"/>
+                                                    <real key="maximum" value="999"/>
+                                                </numberFormatter>
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -97,7 +103,10 @@
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vgt-pR-z0k">
                                             <rect key="frame" x="186" y="75" width="40" height="22"/>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="TzB-NY-bJw">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="fwW-OG-nhU"/>
+                                                <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" generatesDecimalNumbers="YES" allowsFloats="NO" usesGroupingSeparator="NO" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="fwW-OG-nhU">
+                                                    <real key="minimum" value="1"/>
+                                                    <real key="maximum" value="999"/>
+                                                </numberFormatter>
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -120,13 +129,14 @@
                                                 <constraint firstAttribute="width" constant="52" id="HQv-vc-HH2"/>
                                             </constraints>
                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" drawsBackground="YES" id="AIH-yF-Ast">
-                                                <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="OpO-YD-DnF"/>
+                                                <numberFormatter key="formatter" formatterBehavior="custom10_4" numberStyle="decimal" generatesDecimalNumbers="YES" allowsFloats="NO" usesGroupingSeparator="NO" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="OpO-YD-DnF"/>
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
                                                 <binding destination="imv-l8-1ij" name="value" keyPath="values.cycleDelay" id="mt0-rT-SIp"/>
+                                                <outlet property="delegate" destination="M0L-3e-zAP" id="pJf-L4-BlL"/>
                                             </connections>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="de6-ZA-zXW">
@@ -216,6 +226,7 @@
                         <outlet property="rangeLineButton" destination="ehc-Dq-Jei" id="Xa2-9a-EnQ"/>
                         <outlet property="rangeLineEndTextField" destination="Vgt-pR-z0k" id="dV4-VA-vZC"/>
                         <outlet property="rangeLineStartTextField" destination="gmH-q4-7TJ" id="5RL-bn-U97"/>
+                        <outlet property="userDefault" destination="imv-l8-1ij" id="K8J-6d-7GE"/>
                     </connections>
                 </viewController>
                 <customObject id="yDJ-Wj-O3Z" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

@@ -193,6 +193,19 @@
                                     <binding destination="WUK-Rh-DA4" name="value" keyPath="values.inputASCII" id="kA3-67-E9O"/>
                                 </connections>
                             </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="UX9-um-Vi0">
+                                <rect key="frame" x="2" y="226" width="26" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="Ljo-sq-qgs"/>
+                                </constraints>
+                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="clear_screen" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ET1-1c-qWB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clearScreenClick:" target="rPt-NT-nkU" id="MWO-Jm-PZ2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="7Nt-y1-Peo" firstAttribute="leading" secondItem="stD-8n-03Q" secondAttribute="trailing" constant="2" id="2m7-0i-9SZ"/>
@@ -202,11 +215,13 @@
                             <constraint firstAttribute="bottom" secondItem="JLd-Wt-Tnu" secondAttribute="bottom" constant="5" id="KGK-k5-rhC"/>
                             <constraint firstItem="IRJ-FA-HPq" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="OUk-hY-NBS"/>
                             <constraint firstItem="9UD-z5-7nc" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="5" id="QYX-WS-chI"/>
+                            <constraint firstItem="UX9-um-Vi0" firstAttribute="top" secondItem="stD-8n-03Q" secondAttribute="bottom" constant="2" id="RuO-DQ-Gcn"/>
                             <constraint firstItem="JLd-Wt-Tnu" firstAttribute="trailing" secondItem="7Nt-y1-Peo" secondAttribute="trailing" id="WZc-OF-flV"/>
                             <constraint firstItem="7Nt-y1-Peo" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" multiplier="0.5" constant="-30" id="aXA-I4-MJf"/>
                             <constraint firstItem="IRJ-FA-HPq" firstAttribute="centerX" secondItem="7Nt-y1-Peo" secondAttribute="centerX" id="ceG-Nj-G66"/>
                             <constraint firstItem="yG4-Tl-bGT" firstAttribute="trailing" secondItem="stD-8n-03Q" secondAttribute="trailing" id="fKe-yq-DWR"/>
                             <constraint firstItem="9UD-z5-7nc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="5" id="fMb-Q7-NB5"/>
+                            <constraint firstItem="UX9-um-Vi0" firstAttribute="leading" secondItem="stD-8n-03Q" secondAttribute="leading" id="kAp-h7-xPb"/>
                             <constraint firstItem="stD-8n-03Q" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="2" id="lCM-Ak-5vt"/>
                             <constraint firstItem="IRJ-FA-HPq" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="lkV-vL-gCF"/>
                             <constraint firstItem="JLd-Wt-Tnu" firstAttribute="top" secondItem="yG4-Tl-bGT" secondAttribute="top" id="p7E-A3-wLh"/>
@@ -215,6 +230,7 @@
                             <constraint firstItem="yG4-Tl-bGT" firstAttribute="leading" secondItem="stD-8n-03Q" secondAttribute="leading" id="s2J-Bx-FOZ"/>
                             <constraint firstItem="IRJ-FA-HPq" firstAttribute="top" secondItem="9UD-z5-7nc" secondAttribute="bottom" constant="5" id="sLx-mA-piL"/>
                             <constraint firstAttribute="trailing" secondItem="7Nt-y1-Peo" secondAttribute="trailing" constant="5" id="wpc-90-hQK"/>
+                            <constraint firstItem="UX9-um-Vi0" firstAttribute="trailing" secondItem="stD-8n-03Q" secondAttribute="trailing" id="z4S-HH-cre"/>
                         </constraints>
                     </view>
                     <connections>
@@ -259,5 +275,6 @@
         <image name="ascii_mode_en" width="26" height="26"/>
         <image name="button_start" width="32" height="32"/>
         <image name="button_stop" width="32" height="32"/>
+        <image name="clear_screen" width="26" height="26"/>
     </resources>
 </document>

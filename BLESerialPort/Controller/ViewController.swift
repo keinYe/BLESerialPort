@@ -46,8 +46,6 @@ class ViewController: NSViewController {
             } else {
                 reciveString = hexToString(hex: data)
             }
-
-            
             let reciveDataString = "[\(getNowTime())] " + "Rx: " +  reciveString + "\n"
             self.outputTextView.appendColorString(str: reciveDataString, color: NSColor.blue)
             self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
@@ -143,6 +141,10 @@ extension ViewController {
         }
     }
     
+    @IBAction func clearScreenClick(_ sender: Any) {
+        self.outputTextView.clearDisplay()
+    }
+    
     func openAlertPanel(infoTest: String) {
         let alert = NSAlert()
 
@@ -161,7 +163,8 @@ extension ViewController {
     func sendData(send: String) {
         let sendString = "[\(getNowTime())] " + "Tx: " +  send + "\n"
         self.outputTextView.appendColorString(str: sendString, color: NSColor.red)
-        peripheralManager?.sendData(data: stringToHexArray(str: send))
+        self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
+        peripheralManager?.sendData(data: self.displaySetting.inputAsciiMode ? Array(send.utf8) : stringToHexArray(str: send))
     }
 }
 

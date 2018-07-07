@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CyclePanelController: NSViewController {
+class CyclePanelController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var assignLineButton: NSButton!
     @IBOutlet weak var currentLineButton: NSButton!
     @IBOutlet weak var fixedLineButton: NSButton!
@@ -17,6 +17,7 @@ class CyclePanelController: NSViewController {
     @IBOutlet weak var fiexdLineTextField: NSTextField!
     @IBOutlet weak var rangeLineStartTextField: NSTextField!
     @IBOutlet weak var rangeLineEndTextField: NSTextField!
+    @IBOutlet var userDefault: NSUserDefaultsController!
     
     private var cycle = Cycle()
     override func viewDidLoad() {
@@ -38,6 +39,10 @@ class CyclePanelController: NSViewController {
             fiexdLineTextField.isEnabled = true
             fixedLineButton.state = .on
         }
+        
+        fiexdLineTextField.delegate = self
+        rangeLineEndTextField.delegate = self
+        rangeLineStartTextField.delegate = self
     }
     
     @IBAction func cycleCheckButtonClick(_ sender: Any) {
@@ -77,6 +82,10 @@ class CyclePanelController: NSViewController {
         default:
             break
         }
+    }
+    
+    override func controlTextDidChange(_ obj: Notification) {
+        userDefault.save(nil)
     }
     
 }

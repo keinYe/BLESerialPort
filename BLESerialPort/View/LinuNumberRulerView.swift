@@ -40,7 +40,11 @@ extension NSTextView {
         }
     }
     
-    
+    func clearDisplay() {
+        let attrString: NSMutableAttributedString = NSMutableAttributedString()
+        self.textStorage?.setAttributedString(attrString)
+        self.lnv_setUpLineNumberView()
+    }
     
     func appendColorString(str: String, color : NSColor?) {
         let attrString: NSMutableAttributedString = NSMutableAttributedString()
@@ -100,7 +104,7 @@ extension NSTextView {
         if selectedRanges.count > 0 {
             let range:NSRange = selectedRanges.firstObject as! NSRange
             let v = text.lineRange(for: NSRange(location: range.location + range.length, length: 0))
-            let x = text.substring(with: v)
+            let x = text.substring(with: v).trimmingCharacters(in: .newlines)
             return x
         }
         return nil
