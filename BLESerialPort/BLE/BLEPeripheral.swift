@@ -14,11 +14,20 @@ typealias ReciveData = (String, [UInt8]) -> Void
 class BLEPeripheral: NSObject {
     fileprivate var peripheralManager: CBPeripheralManager
     let localNameKey =  "BabyBluetoothStubOnOSX";
-    var ServiceUUID =  "FFF0";
-    var readCharacteristicUUID = "FFF1";
-    var writeCharacteristicUUID = "FFF2";
-    var notiyCharacteristicUUID =  "FFF3";
+    fileprivate var ServiceUUID: String {
+        return UserDefaults.General.string(forKey: .serviceUUID) ?? "FFF0"
+    }
+    fileprivate var readCharacteristicUUID: String {
+        return UserDefaults.General.string(forKey: .readUUID) ?? "FFF1"
+    }
+    fileprivate var writeCharacteristicUUID:String {
+        return UserDefaults.General.string(forKey: .writeUUID) ?? "FFF2"
+    }
+    fileprivate var notiyCharacteristicUUID: String {
+        return UserDefaults.General.string(forKey: .notifyUUID) ?? "FFF3"
+    }
     var isAdvertising = false
+    private(set) var state = CBManagerState.poweredOff
     
     fileprivate var reciveData : ReciveData?
     fileprivate var notiyCharacteristic: CBMutableCharacteristic?
@@ -61,6 +70,7 @@ class BLEPeripheral: NSObject {
         guard isAdvertising else {
             return
         }
+        peripheralManager.removeAllServices()
         peripheralManager.stopAdvertising()
         isAdvertising = false
     }
@@ -70,13 +80,7 @@ class BLEPeripheral: NSObject {
 extension BLEPeripheral: CBPeripheralManagerDelegate {
     internal func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         Logger.info("\(peripheral)")
-        
-        switch peripheral.state {
-        case .poweredOn:
-            publishService()
-        default:
-            break
-        }
+        self.state = peripheral.state
     }
     
     internal func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {

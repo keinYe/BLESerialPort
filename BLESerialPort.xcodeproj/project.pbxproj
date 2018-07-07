@@ -7,25 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A500E8D420EA669E00515E21 /* Trigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500E8D320EA669E00515E21 /* Trigger.swift */; };
+		A5042F3B20E6E63B00F3B106 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5042F3A20E6E63B00F3B106 /* UserDefaultsKeys.swift */; };
+		A5042F3D20E6EAD500F3B106 /* TriggerPanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5042F3C20E6EAD500F3B106 /* TriggerPanel.storyboard */; };
+		A5042F4320E6EF0D00F3B106 /* TriggerPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5042F4220E6EF0D00F3B106 /* TriggerPanelController.swift */; };
 		A50F007920D0065100EF78B1 /* BLESerialPortUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F007820D0065100EF78B1 /* BLESerialPortUITests.swift */; };
 		A50F008120D0074400EF78B1 /* dataConTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50F008020D0074400EF78B1 /* dataConTests.swift */; };
 		A512938B20CAB7F1000DE388 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = A512938A20CAB7F1000DE388 /* Input.swift */; };
-		A51D89FC20C0408000C7BB60 /* CycleSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51D89FB20C0408000C7BB60 /* CycleSend.swift */; };
+		A527F05820E1A0DD001336FE /* LineNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527F05720E1A0DD001336FE /* LineNumberTextView.swift */; };
 		A53499BE20AB15CA0089253B /* LinuNumberRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */; };
 		A53499C120AB96770089253B /* String+Counting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53499C020AB96770089253B /* String+Counting.swift */; };
 		A535C79E209688B3001BF2F5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535C79D209688B3001BF2F5 /* Logger.swift */; };
 		A543F7D520B309E60002D53C /* dataCon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A543F7D420B309E60002D53C /* dataCon.swift */; };
-		A549816520BC3F4A00C483B5 /* ConditionalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A549816420BC3F4A00C483B5 /* ConditionalController.swift */; };
-		A55EC34F209DF5A5002DBD9F /* Preference.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55EC34E209DF5A5002DBD9F /* Preference.storyboard */; };
-		A55EC354209DF86B002DBD9F /* PreferenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55EC353209DF86B002DBD9F /* PreferenceController.swift */; };
-		A55EC357209E809E002DBD9F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55EC356209E809E002DBD9F /* Preferences.swift */; };
 		A566A5D52090C180001406CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D42090C180001406CC /* AppDelegate.swift */; };
 		A566A5D72090C180001406CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D62090C180001406CC /* ViewController.swift */; };
 		A566A5DA2090C180001406CC /* BLESerialPort.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A566A5D82090C180001406CC /* BLESerialPort.xcdatamodeld */; };
 		A566A5DC2090C180001406CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A566A5DB2090C180001406CC /* Assets.xcassets */; };
 		A566A5DF2090C180001406CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A566A5DD2090C180001406CC /* Main.storyboard */; };
 		A566A60420921115001406CC /* BLEPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A566A60320921115001406CC /* BLEPeripheral.swift */; };
-		A5CBCE6020BAF817002AA117 /* Auto.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CBCE5F20BAF817002AA117 /* Auto.storyboard */; };
+		A586031F20ED0AB900DB15B9 /* CyclePanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A586031E20ED0AB900DB15B9 /* CyclePanel.storyboard */; };
+		A586032120ED0ACD00DB15B9 /* CyclePanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A586032020ED0ACD00DB15B9 /* CyclePanelController.swift */; };
+		A586032320ED114000DB15B9 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A586032220ED114000DB15B9 /* Cycle.swift */; };
+		A589075920EED75600FFFCB1 /* CheckDigit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A589075820EED75600FFFCB1 /* CheckDigit.swift */; };
+		A5E78F0E20E5948F00F03863 /* PreferenceWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E78F0C20E5948F00F03863 /* PreferenceWindowController.swift */; };
+		A5E78F0F20E5948F00F03863 /* PreferenceWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E78F0D20E5948F00F03863 /* PreferenceWindow.xib */; };
+		A5E78F1720E5987000F03863 /* GeneralPanel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E78F1620E5987000F03863 /* GeneralPanel.storyboard */; };
+		A5E78F1920E59A2500F03863 /* GeneralPaneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E78F1820E59A2500F03863 /* GeneralPaneController.swift */; };
+		A5EA3CF520EFB4530057D2C8 /* DisplaySetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA3CF420EFB4530057D2C8 /* DisplaySetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A500E8D320EA669E00515E21 /* Trigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trigger.swift; sourceTree = "<group>"; };
+		A5042F3A20E6E63B00F3B106 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		A5042F3C20E6EAD500F3B106 /* TriggerPanel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TriggerPanel.storyboard; sourceTree = "<group>"; };
+		A5042F4220E6EF0D00F3B106 /* TriggerPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerPanelController.swift; sourceTree = "<group>"; };
 		A50F006820D0062A00EF78B1 /* BLESerialPortTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESerialPortTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A50F006C20D0062A00EF78B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A50F007620D0065100EF78B1 /* BLESerialPortUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLESerialPortUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,15 +65,11 @@
 		A50F007A20D0065100EF78B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A50F008020D0074400EF78B1 /* dataConTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataConTests.swift; sourceTree = "<group>"; };
 		A512938A20CAB7F1000DE388 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
-		A51D89FB20C0408000C7BB60 /* CycleSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSend.swift; sourceTree = "<group>"; };
+		A527F05720E1A0DD001336FE /* LineNumberTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNumberTextView.swift; sourceTree = "<group>"; };
 		A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuNumberRulerView.swift; sourceTree = "<group>"; };
 		A53499C020AB96770089253B /* String+Counting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Counting.swift"; sourceTree = "<group>"; };
 		A535C79D209688B3001BF2F5 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A543F7D420B309E60002D53C /* dataCon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataCon.swift; sourceTree = "<group>"; };
-		A549816420BC3F4A00C483B5 /* ConditionalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalController.swift; sourceTree = "<group>"; };
-		A55EC34E209DF5A5002DBD9F /* Preference.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preference.storyboard; sourceTree = "<group>"; };
-		A55EC353209DF86B002DBD9F /* PreferenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceController.swift; sourceTree = "<group>"; };
-		A55EC356209E809E002DBD9F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		A566A5D12090C180001406CC /* BLESerialPort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLESerialPort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A566A5D42090C180001406CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A566A5D62090C180001406CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +79,15 @@
 		A566A5E02090C180001406CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A566A5E12090C180001406CC /* BLESerialPort.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BLESerialPort.entitlements; sourceTree = "<group>"; };
 		A566A60320921115001406CC /* BLEPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEPeripheral.swift; sourceTree = "<group>"; };
-		A5CBCE5F20BAF817002AA117 /* Auto.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auto.storyboard; sourceTree = "<group>"; };
+		A586031E20ED0AB900DB15B9 /* CyclePanel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CyclePanel.storyboard; sourceTree = "<group>"; };
+		A586032020ED0ACD00DB15B9 /* CyclePanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CyclePanelController.swift; sourceTree = "<group>"; };
+		A586032220ED114000DB15B9 /* Cycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
+		A589075820EED75600FFFCB1 /* CheckDigit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDigit.swift; sourceTree = "<group>"; };
+		A5E78F0C20E5948F00F03863 /* PreferenceWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceWindowController.swift; sourceTree = "<group>"; };
+		A5E78F0D20E5948F00F03863 /* PreferenceWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceWindow.xib; sourceTree = "<group>"; };
+		A5E78F1620E5987000F03863 /* GeneralPanel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GeneralPanel.storyboard; sourceTree = "<group>"; };
+		A5E78F1820E59A2500F03863 /* GeneralPaneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPaneController.swift; sourceTree = "<group>"; };
+		A5EA3CF420EFB4530057D2C8 /* DisplaySetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplaySetting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +133,15 @@
 			path = BLESerialPortUITests;
 			sourceTree = "<group>";
 		};
+		A527F05620E1A04C001336FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */,
+				A527F05720E1A0DD001336FE /* LineNumberTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A53499BF20AB96310089253B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,27 +170,26 @@
 			isa = PBXGroup;
 			children = (
 				A543F7D420B309E60002D53C /* dataCon.swift */,
+				A5042F3A20E6E63B00F3B106 /* UserDefaultsKeys.swift */,
+				A589075820EED75600FFFCB1 /* CheckDigit.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		A55EC34D209DF21B002DBD9F /* ViewController */ = {
+		A55EC34D209DF21B002DBD9F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A5E78F0920E592B100F03863 /* Preferences */,
 				A566A5D62090C180001406CC /* ViewController.swift */,
-				A55EC353209DF86B002DBD9F /* PreferenceController.swift */,
-				A53499BD20AB15CA0089253B /* LinuNumberRulerView.swift */,
-				A549816420BC3F4A00C483B5 /* ConditionalController.swift */,
 			);
-			path = ViewController;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		A55EC350209DF5B6002DBD9F /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				A5E78F0620E51A5300F03863 /* Prefereces */,
 				A566A5DD2090C180001406CC /* Main.storyboard */,
-				A55EC34E209DF5A5002DBD9F /* Preference.storyboard */,
-				A5CBCE5F20BAF817002AA117 /* Auto.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -173,9 +197,10 @@
 		A55EC355209E8075002DBD9F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A55EC356209E809E002DBD9F /* Preferences.swift */,
-				A51D89FB20C0408000C7BB60 /* CycleSend.swift */,
 				A512938A20CAB7F1000DE388 /* Input.swift */,
+				A500E8D320EA669E00515E21 /* Trigger.swift */,
+				A586032220ED114000DB15B9 /* Cycle.swift */,
+				A5EA3CF420EFB4530057D2C8 /* DisplaySetting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,20 +228,59 @@
 		A566A5D32090C180001406CC /* BLESerialPort */ = {
 			isa = PBXGroup;
 			children = (
+				A527F05620E1A04C001336FE /* View */,
 				A543F7D320B309540002D53C /* Utilities */,
 				A53499BF20AB96310089253B /* Extensions */,
 				A55EC355209E8075002DBD9F /* Model */,
-				A55EC350209DF5B6002DBD9F /* Storyboard */,
-				A55EC34D209DF21B002DBD9F /* ViewController */,
+				A55EC34D209DF21B002DBD9F /* Controller */,
 				A535C79C2096886D001BF2F5 /* Logger */,
 				A535C79B20968858001BF2F5 /* BLE */,
 				A566A5D42090C180001406CC /* AppDelegate.swift */,
+				A55EC350209DF5B6002DBD9F /* Storyboard */,
 				A566A5DB2090C180001406CC /* Assets.xcassets */,
 				A566A5E02090C180001406CC /* Info.plist */,
 				A566A5E12090C180001406CC /* BLESerialPort.entitlements */,
 				A566A5D82090C180001406CC /* BLESerialPort.xcdatamodeld */,
 			);
 			path = BLESerialPort;
+			sourceTree = "<group>";
+		};
+		A5E78F0620E51A5300F03863 /* Prefereces */ = {
+			isa = PBXGroup;
+			children = (
+				A5E78F0D20E5948F00F03863 /* PreferenceWindow.xib */,
+				A5E78F1020E597B500F03863 /* Panes */,
+			);
+			path = Prefereces;
+			sourceTree = "<group>";
+		};
+		A5E78F0920E592B100F03863 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				A5E78F0C20E5948F00F03863 /* PreferenceWindowController.swift */,
+				A5E78F1120E597E500F03863 /* Panes */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		A5E78F1020E597B500F03863 /* Panes */ = {
+			isa = PBXGroup;
+			children = (
+				A586031E20ED0AB900DB15B9 /* CyclePanel.storyboard */,
+				A5E78F1620E5987000F03863 /* GeneralPanel.storyboard */,
+				A5042F3C20E6EAD500F3B106 /* TriggerPanel.storyboard */,
+			);
+			path = Panes;
+			sourceTree = "<group>";
+		};
+		A5E78F1120E597E500F03863 /* Panes */ = {
+			isa = PBXGroup;
+			children = (
+				A586032020ED0ACD00DB15B9 /* CyclePanelController.swift */,
+				A5E78F1820E59A2500F03863 /* GeneralPaneController.swift */,
+				A5042F4220E6EF0D00F3B106 /* TriggerPanelController.swift */,
+			);
+			path = Panes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,10 +409,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5042F3D20E6EAD500F3B106 /* TriggerPanel.storyboard in Resources */,
 				A566A5DC2090C180001406CC /* Assets.xcassets in Resources */,
+				A586031F20ED0AB900DB15B9 /* CyclePanel.storyboard in Resources */,
 				A566A5DF2090C180001406CC /* Main.storyboard in Resources */,
-				A55EC34F209DF5A5002DBD9F /* Preference.storyboard in Resources */,
-				A5CBCE6020BAF817002AA117 /* Auto.storyboard in Resources */,
+				A5E78F0F20E5948F00F03863 /* PreferenceWindow.xib in Resources */,
+				A5E78F1720E5987000F03863 /* GeneralPanel.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,16 +441,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A51D89FC20C0408000C7BB60 /* CycleSend.swift in Sources */,
+				A5E78F0E20E5948F00F03863 /* PreferenceWindowController.swift in Sources */,
 				A543F7D520B309E60002D53C /* dataCon.swift in Sources */,
-				A549816520BC3F4A00C483B5 /* ConditionalController.swift in Sources */,
+				A5042F3B20E6E63B00F3B106 /* UserDefaultsKeys.swift in Sources */,
+				A5EA3CF520EFB4530057D2C8 /* DisplaySetting.swift in Sources */,
 				A53499BE20AB15CA0089253B /* LinuNumberRulerView.swift in Sources */,
+				A589075920EED75600FFFCB1 /* CheckDigit.swift in Sources */,
+				A586032320ED114000DB15B9 /* Cycle.swift in Sources */,
 				A535C79E209688B3001BF2F5 /* Logger.swift in Sources */,
-				A55EC357209E809E002DBD9F /* Preferences.swift in Sources */,
+				A5042F4320E6EF0D00F3B106 /* TriggerPanelController.swift in Sources */,
+				A527F05820E1A0DD001336FE /* LineNumberTextView.swift in Sources */,
 				A566A5D72090C180001406CC /* ViewController.swift in Sources */,
-				A55EC354209DF86B002DBD9F /* PreferenceController.swift in Sources */,
+				A500E8D420EA669E00515E21 /* Trigger.swift in Sources */,
+				A586032120ED0ACD00DB15B9 /* CyclePanelController.swift in Sources */,
 				A566A60420921115001406CC /* BLEPeripheral.swift in Sources */,
 				A566A5D52090C180001406CC /* AppDelegate.swift in Sources */,
+				A5E78F1920E59A2500F03863 /* GeneralPaneController.swift in Sources */,
 				A53499C120AB96770089253B /* String+Counting.swift in Sources */,
 				A512938B20CAB7F1000DE388 /* Input.swift in Sources */,
 				A566A5DA2090C180001406CC /* BLESerialPort.xcdatamodeld in Sources */,

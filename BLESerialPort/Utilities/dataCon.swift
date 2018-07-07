@@ -35,6 +35,12 @@ func checkString(str: String) -> Bool {
     return false
 }
 
+func stringToArrary(str: String) -> [UInt8] {
+    return str.unicodeScalars.map {
+        UInt8($0.value)
+    }
+}
+
 func stringToHexArray(str: String) -> [UInt8] {
     guard checkString(str: str) else {
         return [UInt8]()
@@ -47,4 +53,13 @@ func stringToHexArray(str: String) -> [UInt8] {
 
 func hexToString(hex:[UInt8]) -> String {
     return hex.reduce("") {total, data in total + String(format: "%02X ", data)}
+}
+
+func getNowTime() -> String {
+    let date = Date()
+    let timeFormatter = DateFormatter()
+    //日期显示格式，可按自己需求显示
+    timeFormatter.dateFormat = "HH:mm:ss SSS"
+    let strNowTime = timeFormatter.string(from: date) as String
+    return strNowTime
 }
