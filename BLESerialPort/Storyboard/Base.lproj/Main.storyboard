@@ -53,6 +53,12 @@
                                                 <binding destination="ARF-1R-cTo" name="value" keyPath="values.triggerEnable" id="SRA-ZV-ebb"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Cycle Send" id="ZpV-RJ-0Sw" userLabel="Cycle Send">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <binding destination="ARF-1R-cTo" name="value" keyPath="values.cycleEnable" id="H11-xB-YDL"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
