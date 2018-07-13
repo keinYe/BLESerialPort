@@ -99,4 +99,9 @@ extension String {
         return self.numberOfLines(in: NSRange(location: 0, length: location), includingLastLineEnding: true)
     }
     
+    func substring(with nsrange: NSRange) -> Substring? {
+        guard let range = Range(nsrange, in: self) else { return nil }
+        return self[range]
+    }
+    
 }

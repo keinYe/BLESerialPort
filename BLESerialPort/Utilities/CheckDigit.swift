@@ -9,5 +9,9 @@
 import Foundation
 
 func CheckSum(_ data:[UInt8]) -> UInt8 {
-    return data.reduce(0, +)
+    var sum = 0
+    for num in data {
+        sum = sum + Int(num)
+    }
+    return UInt8(sum % 0x100)
 }

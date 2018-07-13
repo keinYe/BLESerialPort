@@ -86,6 +86,19 @@ class ViewController: NSViewController {
         }
     }
     
+    @IBAction func checkButtonClick(_ sender: NSButton) {
+        let (string, range) = inputTextView.forSelect()
+        guard let str = string else {
+            return
+        }
+        var offset = range!.location + range!.length
+        let sum = CheckSum(stringToHexArray(str: str))
+        if str[str.characters.index(before: str.endIndex)] == " " {
+            offset -= 1
+        }
+        inputTextView.insertString(subString: String(format: " %02X", sum), offsetBy: offset)
+    }
+    
     @objc private func delaySendLine(timer:Timer) {
         guard let line = timer.userInfo as? Int else {
             return
@@ -153,11 +166,6 @@ extension ViewController {
         alert.informativeText = infoTest
         alert.alertStyle = NSAlert.Style.critical
         alert.runModal()
-    }
-    
-    func setLineColor(textView: NSTextView, start: Int, offset: Int, color: NSColor) {
-        let range = NSRange.init(location: start, length: offset)
-        textView.textStorage?.addAttribute(.foregroundColor, value: color, range: range)
     }
     
     func sendData(send: String) {

@@ -13,7 +13,7 @@ typealias ReciveData = (String, [UInt8]) -> Void
 
 class BLEPeripheral: NSObject {
     fileprivate var peripheralManager: CBPeripheralManager
-    let localNameKey =  "BabyBluetoothStubOnOSX";
+    let localNameKey =  "BLESerialPort";
     fileprivate var ServiceUUID: String {
         return UserDefaults.General.string(forKey: .serviceUUID) ?? "FFF0"
     }

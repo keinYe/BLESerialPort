@@ -57,6 +57,8 @@ extension NSTextView {
         
         self.textStorage?.setAttributedString(attrString)
         self.lnv_setUpLineNumberView()
+        
+        
     }
     
     func lnv_setUpLineNumberView() {
@@ -108,6 +110,32 @@ extension NSTextView {
             return x
         }
         return nil
+    }
+    
+    func forSelect() -> (String?, NSRange?) {
+        let select:NSArray = self.selectedRanges as NSArray
+        let text:NSString = string as NSString
+        
+        if select.count > 0 {
+            let range:NSRange = select.firstObject as! NSRange
+            let v = text.substring(with: range)
+            return (v, range)
+        }
+        return (nil, nil)
+    }
+    
+    func insertString(subString: String, offsetBy: Int) {
+        let attrString: NSMutableAttributedString = NSMutableAttributedString()
+        attrString.append(self.attributedString())
+        
+        let attrs = [NSAttributedStringKey.font : self.font ?? NSFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: NSColor.black] as [NSAttributedStringKey : Any]
+        let appendString = NSMutableAttributedString(string: subString, attributes: attrs)
+        
+        attrString.insert(appendString, at: offsetBy)
+        
+        self.textStorage?.setAttributedString(attrString)
+        //self.lnv_setUpLineNumberView()
+        
     }
 }
 
