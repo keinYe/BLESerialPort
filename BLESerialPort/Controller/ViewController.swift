@@ -57,7 +57,6 @@ class ViewController: NSViewController {
                 let _ = Timer.scheduledTimer(timeInterval: self.trigger.delay, target: self, selector: #selector(self.delaySendLine), userInfo: inputLine, repeats: false)
             }
         })
-        //_ = Timer.scheduledTimer(timeInterval: 1, target: self, selector:#selector(ViewController.sendData) , userInfo: nil, repeats: true)
     }
 
     override var representedObject: Any? {
@@ -91,6 +90,14 @@ class ViewController: NSViewController {
         guard let str = string else {
             return
         }
+        guard !self.displaySetting.inputAsciiMode else {
+            openAlertPanel(infoTest: "当前为 ACSII 发送模式！")
+            return
+        }
+        guard checkString(str: str) else {
+            openAlertPanel(infoTest: "所选数据不是有效的 hex 数据！")
+            return
+        }
         var offset = range!.location + range!.length
         let sum = CheckSum(stringToHexArray(str: str))
         if str[str.characters.index(before: str.endIndex)] == " " {
@@ -104,9 +111,11 @@ class ViewController: NSViewController {
             return
         }
         if let outputLine = self.trigger.getSendLine(form: "\(line + 1)") {
-             Logger.info("\(outputLine)")
             if let outputString = self.inputTextView.stringForLineNumber(lineNumber: outputLine) {
-                Logger.info("\(outputString)")
+                guard !self.displaySetting.inputAsciiMode && !checkString(str: outputString) else {
+                    openAlertPanel(infoTest: "行\(line + 1) 不是有效的 hex 数据！")
+                    return
+                }
                 self.sendData(send: outputString)
             }
         }
@@ -129,6 +138,10 @@ class ViewController: NSViewController {
             cycle.rangeCurrentLineIncrease()
         }
         if let send = sendString {
+            guard self.displaySetting.inputAsciiMode && checkString(str: send) else {
+                openAlertPanel(infoTest: "行\(self.inputText.getLineNumber(form: send)! + 1) 不是有效的 hex 数据！")
+                return
+            }
             sendData(send: send)
             if cycle.enable {
                 let _ = Timer.scheduledTimer(timeInterval: self.cycle.delay, target: self, selector: #selector(self.cycleSendLine), userInfo: nil, repeats: false)
