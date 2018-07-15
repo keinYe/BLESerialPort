@@ -41,7 +41,8 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Tools" systemMenu="font" id="4Hx-sD-1iJ">
                                     <items>
-                                        <menuItem title="Send" keyEquivalent="s" id="heh-r4-Sdl">
+                                        <menuItem title="Send" keyEquivalent="" id="heh-r4-Sdl">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="sendMenuItemSelected:" target="Ady-hI-5gd" id="Or1-yq-4ya"/>
                                             </connections>

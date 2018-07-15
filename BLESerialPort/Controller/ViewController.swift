@@ -23,6 +23,8 @@ class ViewController: NSViewController {
     var cycle = Cycle()
     var displaySetting = DisplaySetting()
     
+    var cycleTimer:Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -112,7 +114,7 @@ class ViewController: NSViewController {
         }
         if let outputLine = self.trigger.getSendLine(form: "\(line + 1)") {
             if let outputString = self.inputTextView.stringForLineNumber(lineNumber: outputLine) {
-                guard !self.displaySetting.inputAsciiMode && !checkString(str: outputString) else {
+                if !self.displaySetting.inputAsciiMode && !checkString(str: outputString) {
                     openAlertPanel(infoTest: "行\(line + 1) 不是有效的 hex 数据！")
                     return
                 }
@@ -138,13 +140,15 @@ class ViewController: NSViewController {
             cycle.rangeCurrentLineIncrease()
         }
         if let send = sendString {
-            guard self.displaySetting.inputAsciiMode && checkString(str: send) else {
+            if !self.displaySetting.inputAsciiMode && !checkString(str: send) {
                 openAlertPanel(infoTest: "行\(self.inputText.getLineNumber(form: send)! + 1) 不是有效的 hex 数据！")
                 return
             }
             sendData(send: send)
             if cycle.enable {
-                let _ = Timer.scheduledTimer(timeInterval: self.cycle.delay, target: self, selector: #selector(self.cycleSendLine), userInfo: nil, repeats: false)
+                cycleTimer = Timer.scheduledTimer(timeInterval: self.cycle.delay, target: self, selector: #selector(self.cycleSendLine), userInfo: nil, repeats: false)
+            } else {
+                cycleTimer = nil
             }
         }
     }
@@ -157,13 +161,15 @@ extension ViewController {
             return
         }
         
-        guard checkString(str: selectString) else {
+        if !self.displaySetting.inputAsciiMode && !checkString(str: selectString) {
             openAlertPanel(infoTest: "当前选择行数据错误")
             return
         }
         sendData(send: selectString)
-        if cycle.enable {
-            let _ = Timer.scheduledTimer(timeInterval: self.cycle.delay, target: self, selector: #selector(self.cycleSendLine), userInfo: nil, repeats: false)
+        if cycle.enable && cycleTimer == nil {
+            cycleTimer = Timer.scheduledTimer(timeInterval: self.cycle.delay, target: self, selector: #selector(self.cycleSendLine), userInfo: nil, repeats: false)
+        } else if cycle.enable == false {
+            cycleTimer = nil
         }
     }
     
@@ -182,7 +188,23 @@ extension ViewController {
     }
     
     func sendData(send: String) {
-        let sendString = "[\(getNowTime())] " + "Tx: " +  send + "\n"
+        var output = ""
+        if self.displaySetting.inputAsciiMode {
+            if self.displaySetting.outputAsciiMode {
+                output = send
+            } else {
+                output = hexToString(hex: Array(send.utf8))
+            }
+        } else {
+            if self.displaySetting.outputAsciiMode {
+                for char in stringToHexArray(str: send) {
+                    output.append(Character(UnicodeScalar(char)))
+                }
+            } else {
+                output = send
+            }
+        }
+        let sendString = "[\(getNowTime())] " + "Tx: " +  output + "\n"
         self.outputTextView.appendColorString(str: sendString, color: NSColor.red)
         self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
         peripheralManager?.sendData(data: self.displaySetting.inputAsciiMode ? Array(send.utf8) : stringToHexArray(str: send))
@@ -199,18 +221,12 @@ extension ViewController: NSTextViewDelegate {
         return false
     }
     
-    func textView(_ textView: NSTextView, clickedOn cell: NSTextAttachmentCellProtocol, in cellFrame: NSRect, at charIndex: Int) {
-        Logger.info("\(cell)")
-        
-    }
-    
     func textViewDidChangeSelection(_ notification: Notification) {
         // 当前光标所选内容发生改变
         if (inputText.str != inputTextView.string) {
             inputText.str = inputTextView.string
         }
         Logger.info(inputTextView.string)
-        //inputTextView.textStorage?.font = NSFont(name: "Lucida Sans", size: 11)
     }
     
     func textView(_ textView: NSTextView, completions words: [String], forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>?) -> [String] {
