@@ -15,6 +15,9 @@ extension UserDefaults {
         enum defaultKeys:String {
             case inputASCII
             case outputASCII
+            case displayTime
+            case displayTxRx
+            case displaySend
         }
     }
     

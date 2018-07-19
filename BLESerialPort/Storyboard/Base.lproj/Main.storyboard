@@ -37,6 +37,33 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="View" id="18f-EM-Thb">
+                                <menu key="submenu" title="View" id="5Yv-EB-S6k">
+                                    <items>
+                                        <menuItem title="Display Time" keyEquivalent="T" id="YkT-TW-VZc">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                            <connections>
+                                                <action selector="focusPrevSplitTextView:" target="Ady-hI-5gd" id="ot4-aL-A00"/>
+                                                <binding destination="ARF-1R-cTo" name="value" keyPath="values.displayTime" id="i5b-QE-HRd"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Display TxRx" keyEquivalent="R" id="mHk-z1-YEQ">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                            <connections>
+                                                <action selector="toggleSplitOrientation:" target="Ady-hI-5gd" id="tAz-oQ-9HC"/>
+                                                <binding destination="ARF-1R-cTo" name="value" keyPath="values.displayTxRx" id="6a4-p0-XzC"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Display Send" keyEquivalent="S" id="tLT-s8-0p4">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                            <connections>
+                                                <action selector="closeSplitTextView:" target="Ady-hI-5gd" id="hRs-fM-KV1"/>
+                                                <binding destination="ARF-1R-cTo" name="value" keyPath="values.displaySend" id="OOU-Tl-Mng"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Tools" id="66h-9c-255">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Tools" systemMenu="font" id="4Hx-sD-1iJ">
@@ -80,7 +107,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -262,32 +289,6 @@
                 <userDefaultsController id="WUK-Rh-DA4"/>
             </objects>
             <point key="canvasLocation" x="75" y="729"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="odf-Pt-7Bb">
-            <objects>
-                <viewController id="Cny-DZ-eOH" sceneMemberID="viewController">
-                    <view key="view" id="XET-bh-yCj">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="nSt-id-KvK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="804" y="876"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="1Rg-bD-ycy">
-            <objects>
-                <viewController id="1FH-XA-85B" sceneMemberID="viewController">
-                    <view key="view" id="AeM-0M-7WZ">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="GcT-CT-7aN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="804" y="1248"/>
         </scene>
     </scenes>
     <resources>

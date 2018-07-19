@@ -48,7 +48,7 @@ class ViewController: NSViewController {
             } else {
                 reciveString = hexToString(hex: data)
             }
-            let reciveDataString = "[\(getNowTime())] " + "Rx: " +  reciveString + "\n"
+            let reciveDataString = (self.displaySetting.displayTime ? "[\(getNowTime())] " : "") + (self.displaySetting.displayTxRx ? "Rx: " : "") +  reciveString + "\n"
             self.outputTextView.appendColorString(str: reciveDataString, color: NSColor.blue)
             self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
             
@@ -188,25 +188,27 @@ extension ViewController {
     }
     
     func sendData(send: String) {
-        var output = ""
-        if self.displaySetting.inputAsciiMode {
-            if self.displaySetting.outputAsciiMode {
-                output = send
-            } else {
-                output = hexToString(hex: Array(send.utf8))
-            }
-        } else {
-            if self.displaySetting.outputAsciiMode {
-                for char in stringToHexArray(str: send) {
-                    output.append(Character(UnicodeScalar(char)))
+        if displaySetting.displaySend {
+            var output = ""
+            if self.displaySetting.inputAsciiMode {
+                if self.displaySetting.outputAsciiMode {
+                    output = send
+                } else {
+                    output = hexToString(hex: Array(send.utf8))
                 }
             } else {
-                output = send
+                if self.displaySetting.outputAsciiMode {
+                    for char in stringToHexArray(str: send) {
+                        output.append(Character(UnicodeScalar(char)))
+                    }
+                } else {
+                    output = send
+                }
             }
+            let sendString = (displaySetting.displayTime ? "[\(getNowTime())] " : "") + (displaySetting.displayTxRx ? "Tx: " : "") +  output + "\n"
+            self.outputTextView.appendColorString(str: sendString, color: NSColor.red)
+            self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
         }
-        let sendString = "[\(getNowTime())] " + "Tx: " +  output + "\n"
-        self.outputTextView.appendColorString(str: sendString, color: NSColor.red)
-        self.outputTextView.scrollRangeToVisible(NSRange.init(location: self.outputTextView.string.count, length: 1))
         peripheralManager?.sendData(data: self.displaySetting.inputAsciiMode ? Array(send.utf8) : stringToHexArray(str: send))
     }
 }
