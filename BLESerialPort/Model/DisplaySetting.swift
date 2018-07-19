@@ -20,4 +20,23 @@ struct DisplaySetting {
             return UserDefaults.DisplaySetting.bool(forKey: .outputASCII)
         }
     }
+    
+    var displayTime:Bool {
+        get {
+            return UserDefaults.DisplaySetting.bool(forKey: .displayTime)
+        }
+    }
+    
+    var displayTxRx:Bool {
+        get {
+            return UserDefaults.DisplaySetting.bool(forKey: .displayTxRx)
+        }
+    }
+    
+    var displaySend:Bool {
+        get {
+            return UserDefaults.DisplaySetting.bool(forKey: .displaySend)
+        }
+    }
+    
 }

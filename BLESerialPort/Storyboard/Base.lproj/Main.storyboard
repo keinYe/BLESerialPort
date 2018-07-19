@@ -37,11 +37,39 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="View" id="18f-EM-Thb">
+                                <menu key="submenu" title="View" id="5Yv-EB-S6k">
+                                    <items>
+                                        <menuItem title="Display Time" keyEquivalent="T" id="YkT-TW-VZc">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                            <connections>
+                                                <action selector="focusPrevSplitTextView:" target="Ady-hI-5gd" id="ot4-aL-A00"/>
+                                                <binding destination="ARF-1R-cTo" name="value" keyPath="values.displayTime" id="i5b-QE-HRd"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Display TxRx" keyEquivalent="R" id="mHk-z1-YEQ">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                            <connections>
+                                                <action selector="toggleSplitOrientation:" target="Ady-hI-5gd" id="tAz-oQ-9HC"/>
+                                                <binding destination="ARF-1R-cTo" name="value" keyPath="values.displayTxRx" id="6a4-p0-XzC"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Display Send" keyEquivalent="S" id="tLT-s8-0p4">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES"/>
+                                            <connections>
+                                                <action selector="closeSplitTextView:" target="Ady-hI-5gd" id="hRs-fM-KV1"/>
+                                                <binding destination="ARF-1R-cTo" name="value" keyPath="values.displaySend" id="OOU-Tl-Mng"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Tools" id="66h-9c-255">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Tools" systemMenu="font" id="4Hx-sD-1iJ">
                                     <items>
-                                        <menuItem title="Send" keyEquivalent="s" id="heh-r4-Sdl">
+                                        <menuItem title="Send" keyEquivalent="" id="heh-r4-Sdl">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="sendMenuItemSelected:" target="Ady-hI-5gd" id="Or1-yq-4ya"/>
                                             </connections>
@@ -51,6 +79,12 @@
                                             <connections>
                                                 <action selector="triggerMenuEnableClick:" target="Ady-hI-5gd" id="Oxq-6T-2VE"/>
                                                 <binding destination="ARF-1R-cTo" name="value" keyPath="values.triggerEnable" id="SRA-ZV-ebb"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Cycle Send" id="ZpV-RJ-0Sw" userLabel="Cycle Send">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <binding destination="ARF-1R-cTo" name="value" keyPath="values.cycleEnable" id="H11-xB-YDL"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -73,7 +107,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="disallowed" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -206,10 +240,21 @@
                                     <action selector="clearScreenClick:" target="rPt-NT-nkU" id="MWO-Jm-PZ2"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="avx-1n-Mtc">
+                                <rect key="frame" x="2" y="83" width="26" height="26"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="check" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="KhU-VQ-OFg">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="checkButtonClick:" target="rPt-NT-nkU" id="cwA-3b-JHr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="7Nt-y1-Peo" firstAttribute="leading" secondItem="stD-8n-03Q" secondAttribute="trailing" constant="2" id="2m7-0i-9SZ"/>
                             <constraint firstItem="7Nt-y1-Peo" firstAttribute="top" secondItem="stD-8n-03Q" secondAttribute="top" id="7TF-PZ-cHi"/>
+                            <constraint firstItem="avx-1n-Mtc" firstAttribute="trailing" secondItem="yG4-Tl-bGT" secondAttribute="trailing" id="CoS-qi-B9d"/>
                             <constraint firstItem="7Nt-y1-Peo" firstAttribute="top" secondItem="IRJ-FA-HPq" secondAttribute="bottom" constant="5" id="GUK-Md-4kO"/>
                             <constraint firstItem="7Nt-y1-Peo" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="ILS-vV-M6P"/>
                             <constraint firstAttribute="bottom" secondItem="JLd-Wt-Tnu" secondAttribute="bottom" constant="5" id="KGK-k5-rhC"/>
@@ -224,11 +269,13 @@
                             <constraint firstItem="UX9-um-Vi0" firstAttribute="leading" secondItem="stD-8n-03Q" secondAttribute="leading" id="kAp-h7-xPb"/>
                             <constraint firstItem="stD-8n-03Q" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="2" id="lCM-Ak-5vt"/>
                             <constraint firstItem="IRJ-FA-HPq" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="lkV-vL-gCF"/>
+                            <constraint firstItem="avx-1n-Mtc" firstAttribute="leading" secondItem="yG4-Tl-bGT" secondAttribute="leading" id="mwS-h9-Z1V"/>
                             <constraint firstItem="JLd-Wt-Tnu" firstAttribute="top" secondItem="yG4-Tl-bGT" secondAttribute="top" id="p7E-A3-wLh"/>
                             <constraint firstItem="JLd-Wt-Tnu" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="30" id="qjc-ga-kn2"/>
                             <constraint firstItem="JLd-Wt-Tnu" firstAttribute="top" secondItem="7Nt-y1-Peo" secondAttribute="bottom" constant="10" id="qp0-C7-avn"/>
                             <constraint firstItem="yG4-Tl-bGT" firstAttribute="leading" secondItem="stD-8n-03Q" secondAttribute="leading" id="s2J-Bx-FOZ"/>
                             <constraint firstItem="IRJ-FA-HPq" firstAttribute="top" secondItem="9UD-z5-7nc" secondAttribute="bottom" constant="5" id="sLx-mA-piL"/>
+                            <constraint firstItem="avx-1n-Mtc" firstAttribute="top" secondItem="yG4-Tl-bGT" secondAttribute="bottom" constant="2" id="tFH-fI-Fdh"/>
                             <constraint firstAttribute="trailing" secondItem="7Nt-y1-Peo" secondAttribute="trailing" constant="5" id="wpc-90-hQK"/>
                             <constraint firstItem="UX9-um-Vi0" firstAttribute="trailing" secondItem="stD-8n-03Q" secondAttribute="trailing" id="z4S-HH-cre"/>
                         </constraints>
@@ -243,38 +290,13 @@
             </objects>
             <point key="canvasLocation" x="75" y="729"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="odf-Pt-7Bb">
-            <objects>
-                <viewController id="Cny-DZ-eOH" sceneMemberID="viewController">
-                    <view key="view" id="XET-bh-yCj">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="nSt-id-KvK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="804" y="876"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="1Rg-bD-ycy">
-            <objects>
-                <viewController id="1FH-XA-85B" sceneMemberID="viewController">
-                    <view key="view" id="AeM-0M-7WZ">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="GcT-CT-7aN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="804" y="1248"/>
-        </scene>
     </scenes>
     <resources>
         <image name="ascii_mode_dis" width="26" height="26"/>
         <image name="ascii_mode_en" width="26" height="26"/>
         <image name="button_start" width="32" height="32"/>
         <image name="button_stop" width="32" height="32"/>
+        <image name="check" width="26" height="26"/>
         <image name="clear_screen" width="26" height="26"/>
     </resources>
 </document>

@@ -184,7 +184,7 @@
                                     <font key="font" size="13" name=".PingFangSC-Regular"/>
                                     <string key="title">提示：
       接收到发送窗口的“接收行”数据，触发发送窗口的“发送行”数据。
-      最多可设置20组“接受行”和“发送
+      最多可设置20组“接收行”和“发送
 行”</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
